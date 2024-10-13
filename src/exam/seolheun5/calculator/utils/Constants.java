@@ -24,6 +24,10 @@ public class Constants {
     public static final String STANDARD_TITLE = "Standard";
 
     // 색상 상수
-    /** 계산기 배경 색상 상수 */
+    /**
+     * 계산기 배경 색상 상수
+     *
+     * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
+     */
     public static final Color   CALCULATOR_BACGROUND = new Color(0xf3f3f3);
 }

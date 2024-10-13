@@ -42,6 +42,8 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-12: 타이틀 패널 추가</li>
      *     <li>2024-10-13: 메인 패널 추가 및 배경색 설정</li>
      * </ul>
+     *
+     * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
      */
     CalculatorPanel() {
         setLayout(new BorderLayout());
