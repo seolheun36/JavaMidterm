@@ -1,5 +1,7 @@
 package exam.seolheun5.calculator.ui;
 
+import exam.seolheun5.calculator.utils.Constants;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,9 +18,12 @@ import java.awt.*;
  * <ul>
  *     <li>2024-10-12: 최초 생성</li>
  *     <li>2024-10-12: 타이틀 패널 생성 및 구성</li>
+ *     <li>2024-10-13: 패널 배경색 설정</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
+
+    private JPanel mainPanel;
     private JPanel titlePanel;
     private JPanel resultPanel;
     private JPanel buttonPanel;
@@ -35,14 +40,20 @@ public class CalculatorPanel extends JPanel {
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
      *     <li>2024-10-12: 타이틀 패널 추가</li>
+     *     <li>2024-10-13: 메인 패널 추가 및 배경색 설정</li>
      * </ul>
      */
     CalculatorPanel() {
         setLayout(new BorderLayout());
 
+        mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBackground(Constants.CALCULATOR_BACGROUND);
+
         createTitlePanel();
 
-        add(titlePanel, BorderLayout.NORTH);
+        mainPanel.add(titlePanel, BorderLayout.NORTH);
+
+        add(mainPanel);
     }
 
     /**
@@ -57,13 +68,15 @@ public class CalculatorPanel extends JPanel {
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
      *     <li>2024-10-12: 타이틀 레이아웃 생성 및 설정</li>
+     *     <li>2024-10-13: 타이틀 패널 배경색 설정</li>
      * </ul>
      */
     private void createTitlePanel() {
         titlePanel = new JPanel();
         titlePanel.setLayout(new BorderLayout());
+        titlePanel.setBackground(Constants.CALCULATOR_BACGROUND);
 
-        JLabel titleLabel = new JLabel("Standard", SwingConstants.LEFT);
+        JLabel titleLabel = new JLabel(Constants.STANDARD_TITLE, SwingConstants.LEFT);
         titleLabel.setFont(new Font("Arial", Font.PLAIN, 20));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
