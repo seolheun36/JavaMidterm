@@ -12,7 +12,7 @@ import java.awt.*;
  * @author seolheun5(김은성, piberius5@gmail.com)
  *
  * @create 2024-10-12
- * @lastModified 2024-10-12
+ * @lastModified 2024-10-13
  *
  * @changelog
  * <ul>
@@ -34,7 +34,7 @@ public class CalculatorPanel extends JPanel {
      * @author seolheun5(김은성, priberius5@gmail.com)
      *
      * @created 2024-10-12
-     * @lastModified 2024-10-12
+     * @lastModified 2024-10-14
      *
      * @changelog
      * <ul>
@@ -42,6 +42,7 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-12: 타이틀 패널 추가</li>
      *     <li>2024-10-13: 메인 패널 추가 및 메인 패널, 타이틀 패널 배경색 설정</li>
      *     <li>2024-10-14: 결과 패널 추가</li>
+     *     <li>2024-10-14: 버튼 패널 추가</li>
      * </ul>
      *
      * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -54,9 +55,11 @@ public class CalculatorPanel extends JPanel {
 
         createTitlePanel();
         createResultPanel();
+        createButtonPanel();
 
         mainPanel.add(titlePanel, BorderLayout.NORTH);
         mainPanel.add(resultPanel, BorderLayout.CENTER);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
     }
@@ -67,7 +70,7 @@ public class CalculatorPanel extends JPanel {
      * @author seolheun5(김은성, priberius5@gmail.com)
      *
      * @created 2024-10-12
-     * @lastModified 2024-10-12
+     * @lastModified 2024-10-13
      *
      * @changelog
      * <ul>
@@ -93,7 +96,7 @@ public class CalculatorPanel extends JPanel {
      * @author seolheun5(김은성, priberius5@gmail.com)
      *
      * @created 2024-10-12
-     * @lastModified 2024-10-12
+     * @lastModified 2024-10-14
      *
      * @changelog
      * <ul>
@@ -118,14 +121,23 @@ public class CalculatorPanel extends JPanel {
      * @author seolheun5(김은성, priberius5 @ gmail.com)
      *
      * @created 2024-10-12
-     * @lastModified 2024-10-12
+     * @lastModified 2024-10-14
      *
      * @changelog
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
+     *     <li>2024-10-14: 버튼 레이아웃 생성 및 설정</li>
      * </ul>
      */
     private void createButtonPanel() {
+        buttonPanel = new JPanel(new GridLayout(5, 4, 5, 5));
+        buttonPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
+        for(String label : Constants.BUTTONS_LIST) {
+            JButton button = new JButton(label);
+            button.setFont(new Font("Arial", Font.PLAIN, 15));
+            buttonPanel.add(button);
+        }
     }
 }
