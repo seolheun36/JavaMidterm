@@ -43,23 +43,40 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-13: 메인 패널 추가 및 메인 패널, 타이틀 패널 배경색 설정</li>
      *     <li>2024-10-14: 결과 패널 추가</li>
      *     <li>2024-10-14: 버튼 패널 추가</li>
+     *     <li>2024-10-14: 메인 패널 배치관리자 변경</li>
      * </ul>
      *
      * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
+     * @see <a href="https://itdeveloper.tistory.com/20">메인 패널 레이아웃 변경 참고</a>
      */
     CalculatorPanel() {
         setLayout(new BorderLayout());
 
-        mainPanel = new JPanel(new BorderLayout());
+        mainPanel = new JPanel(new GridBagLayout());
         mainPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.BOTH;
 
         createTitlePanel();
         createResultPanel();
         createButtonPanel();
 
-        mainPanel.add(titlePanel, BorderLayout.NORTH);
-        mainPanel.add(resultPanel, BorderLayout.CENTER);
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        gbc.weightx = 1;
+        gbc.weighty = 0.1;
+        gbc.gridy = 0;
+        mainPanel.add(titlePanel, gbc);
+
+        gbc.weightx = 1;
+        gbc.weighty = 0.2;
+        gbc.gridy = 1;
+        mainPanel.add(resultPanel, gbc);
+
+        gbc.weightx = 1;
+        gbc.weighty = 0.7;
+        gbc.gridy = 2;
+        mainPanel.add(buttonPanel, gbc);
+
 
         add(mainPanel);
     }
