@@ -1,5 +1,6 @@
 package exam.seolheun5.calculator.ui;
 
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -9,7 +10,7 @@ import javax.swing.*;
  * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @created 2024-10-11
- * @lastModified 2024-10-12
+ * @lastModified 2024-10-14
  *
  * @changelog
  * <ul>
@@ -17,6 +18,7 @@ import javax.swing.*;
  *     <li>2024-10-11: 프레임 기본 설정</li>
  *     <li>2024-10-12: 프레임 위치 설정</li>
  *     <li>2024-10-12: 패널 클래스 연동</li>
+ *     <li>2024-10-14: 앱 아이콘 변경</li>
  * </ul>
  */
 public class CalculatorFrame extends JFrame {
@@ -28,7 +30,7 @@ public class CalculatorFrame extends JFrame {
      * @author seolheun5(김은성, priberius5 @ gmail.com)
      *
      * @created 2024-10-11
-     * @lastModified 2024-10-12
+     * @lastModified 2024-10-14
      *
      * @changelog
      * <ul>
@@ -36,15 +38,21 @@ public class CalculatorFrame extends JFrame {
      *     <li>2024-10-11: 프레임 기본 설정(title, default close op, size)</li>
      *     <li>2024-10-12: 프레임 중앙에 띄우기</li>
      *     <li>2024-10-12: CalculatorPanel CalculatorFrame에 add</li>
+     *     <li>2024-10-14: 앱 아이콘 변경</li>
      * </ul>
      *
+     * @see <a href="<a href="https://kr.freepik.com/search#uuid=84ebb90f-80fa-498c-a7c4-190a24030d89">UIcons 제작 아이콘</a>">아이콘 출처</a>
      * @see <a href="https://selfinvestfriends.tistory.com/15">패널 중앙에 띄우기 참고</a>
+     * @see <a href="https://chatgpt.com/share/670d1343-ab58-8008-92be-bdc7ae286b2c">아이콘 변경 참고</a>
      */
     public CalculatorFrame() {
         setTitle("Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(335, 540);
         setLocationRelativeTo(null);
+
+        Image icon = new ImageIcon(getClass().getResource("../resources/icons/icon.png")).getImage();
+        setIconImage(icon);
 
         CalculatorPanel calculatorPanel = new CalculatorPanel();
         add(calculatorPanel);

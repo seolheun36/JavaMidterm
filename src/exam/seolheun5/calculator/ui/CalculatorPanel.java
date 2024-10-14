@@ -13,7 +13,7 @@ import java.awt.*;
  * @author seolheun5(김은성, piberius5@gmail.com)
  *
  * @create 2024-10-12
- * @lastModified 2024-10-13
+ * @lastModified 2024-10-14
  *
  * @changelog
  * <ul>
