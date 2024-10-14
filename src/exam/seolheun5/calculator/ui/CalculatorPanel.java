@@ -1,5 +1,6 @@
 package exam.seolheun5.calculator.ui;
 
+import exam.seolheun5.calculator.utils.RoundedButton;
 import exam.seolheun5.calculator.utils.Constants;
 
 import javax.swing.*;
@@ -22,6 +23,7 @@ import java.awt.*;
  *     <li>2024-10-14: 결과 패널 생성 및 구성</li>
  *     <li>2024-10-14: 버튼 패널 생성 및 구성</li>
  *     <li>2024-10-14: 버튼 패널 버튼 색상 설정</li>
+ *     <li>2024-10-14: 버튼 타입 변경</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
@@ -148,6 +150,7 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-12: 최초 생성</li>
      *     <li>2024-10-14: 버튼 레이아웃 생성 및 설정</li>
      *     <li>2024-10-14: 버튼 색상 설정</li>
+     *     <li>2024-10-14: 라운드 버튼으로 버튼 변경</li>
      * </ul>
      *
      * @see <a href="https://hamait.tistory.com/342">정규표현식 참고</a>
@@ -158,7 +161,7 @@ public class CalculatorPanel extends JPanel {
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         for(String label : Constants.BUTTONS_LIST) {
-            JButton button = new JButton(label);
+            RoundedButton button = new RoundedButton(label);
             button.setFont(new Font("Arial", Font.PLAIN, 15));
 
             if(label.matches("^[0-9±.]$")) {
