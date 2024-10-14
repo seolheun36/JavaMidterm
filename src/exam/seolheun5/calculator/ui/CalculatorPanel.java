@@ -19,6 +19,9 @@ import java.awt.*;
  *     <li>2024-10-12: 최초 생성</li>
  *     <li>2024-10-12: 타이틀 패널 생성 및 구성</li>
  *     <li>2024-10-13: 패널 배경색 설정</li>
+ *     <li>2024-10-14: 결과 패널 생성 및 구성</li>
+ *     <li>2024-10-14: 버튼 패널 생성 및 구성</li>
+ *     <li>2024-10-14: 버튼 패널 버튼 색상 설정</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
@@ -53,7 +56,7 @@ public class CalculatorPanel extends JPanel {
         setLayout(new BorderLayout());
 
         mainPanel = new JPanel(new GridBagLayout());
-        mainPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+        mainPanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
@@ -98,7 +101,7 @@ public class CalculatorPanel extends JPanel {
      */
     private void createTitlePanel() {
         titlePanel = new JPanel(new BorderLayout());
-        titlePanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+        titlePanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
         JLabel titleLabel = new JLabel(Constants.STANDARD_TITLE, SwingConstants.LEFT);
         titleLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -123,7 +126,7 @@ public class CalculatorPanel extends JPanel {
      */
     private void createResultPanel() {
         resultPanel = new JPanel(new BorderLayout());
-        resultPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+        resultPanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
         JLabel resultLabel = new JLabel("0", SwingConstants.RIGHT);
         resultLabel.setFont(new Font("Arial", Font.PLAIN, 45));
@@ -144,16 +147,29 @@ public class CalculatorPanel extends JPanel {
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
      *     <li>2024-10-14: 버튼 레이아웃 생성 및 설정</li>
+     *     <li>2024-10-14: 버튼 색상 설정</li>
      * </ul>
+     *
+     * @see <a href="https://hamait.tistory.com/342">정규표현식 참고</a>
      */
     private void createButtonPanel() {
         buttonPanel = new JPanel(new GridLayout(5, 4, 5, 5));
-        buttonPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
+        buttonPanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         for(String label : Constants.BUTTONS_LIST) {
             JButton button = new JButton(label);
             button.setFont(new Font("Arial", Font.PLAIN, 15));
+
+            if(label.matches("^[0-9±.]$")) {
+                button.setBackground(Constants.CALCULATOR_NUMBERPAD_COLOR);
+            } else if(label.equals("=")) {
+                button.setBackground(Constants.CALCULATOR_EQUALS_COLOR);
+                button.setForeground(Color.WHITE);
+            } else {
+                button.setBackground(Constants.CALCULATOR_FUN_AND_OPERPAD_COLOR);
+            }
+
             buttonPanel.add(button);
         }
     }

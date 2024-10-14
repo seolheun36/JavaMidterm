@@ -18,7 +18,10 @@ import java.awt.*;
  *     <li>2024-10-13: 색상 상수 생성 및 배경 색상 상수 선언</li>
  *     <li>2024-10-14: 배경 색상 상수명 오타 수정</li>
  *     <li>2024-10-14: 레이블 상수 및 레이블 리스트 선언</li>
+ *     <li>2024-10-14: 버튼 색상 상수 선언 및 색상 상수명에 COLOR 추가</li>
  * </ul>
+ *
+ * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
  */
 public class Constants {
     // 타이틀 상수
@@ -80,8 +83,8 @@ public class Constants {
 
 
     // 색상 상수
-    /**
-     * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
-     */
-    public static final Color CALCULATOR_BACKGROUND = new Color(0xf3f3f3);
+    public static final Color CALCULATOR_BACKGROUND_COLOR = new Color(0xf3f3f3);
+    public static final Color CALCULATOR_NUMBERPAD_COLOR = new Color(0xfcfcfc);
+    public static final Color CALCULATOR_FUN_AND_OPERPAD_COLOR = new Color(0xf6f6f6);
+    public static final Color CALCULATOR_EQUALS_COLOR = new Color(0x7b7161);
 }
