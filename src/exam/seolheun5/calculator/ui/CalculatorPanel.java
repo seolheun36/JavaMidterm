@@ -40,7 +40,8 @@ public class CalculatorPanel extends JPanel {
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
      *     <li>2024-10-12: 타이틀 패널 추가</li>
-     *     <li>2024-10-13: 메인 패널 추가 및 배경색 설정</li>
+     *     <li>2024-10-13: 메인 패널 추가 및 메인 패널, 타이틀 패널 배경색 설정</li>
+     *     <li>2024-10-14: 결과 패널 추가</li>
      * </ul>
      *
      * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -49,11 +50,13 @@ public class CalculatorPanel extends JPanel {
         setLayout(new BorderLayout());
 
         mainPanel = new JPanel(new BorderLayout());
-        mainPanel.setBackground(Constants.CALCULATOR_BACGROUND);
+        mainPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
 
         createTitlePanel();
+        createResultPanel();
 
         mainPanel.add(titlePanel, BorderLayout.NORTH);
+        mainPanel.add(resultPanel, BorderLayout.CENTER);
 
         add(mainPanel);
     }
@@ -74,9 +77,8 @@ public class CalculatorPanel extends JPanel {
      * </ul>
      */
     private void createTitlePanel() {
-        titlePanel = new JPanel();
-        titlePanel.setLayout(new BorderLayout());
-        titlePanel.setBackground(Constants.CALCULATOR_BACGROUND);
+        titlePanel = new JPanel(new BorderLayout());
+        titlePanel.setBackground(Constants.CALCULATOR_BACKGROUND);
 
         JLabel titleLabel = new JLabel(Constants.STANDARD_TITLE, SwingConstants.LEFT);
         titleLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -96,10 +98,18 @@ public class CalculatorPanel extends JPanel {
      * @changelog
      * <ul>
      *     <li>2024-10-12: 최초 생성</li>
+     *     <li>2024-10-14: 결과 레이아웃 생성 및 설정</li>
      * </ul>
      */
     private void createResultPanel() {
+        resultPanel = new JPanel(new BorderLayout());
+        resultPanel.setBackground(Constants.CALCULATOR_BACKGROUND);
 
+        JLabel resultLabel = new JLabel("0", SwingConstants.RIGHT);
+        resultLabel.setFont(new Font("Arial", Font.PLAIN, 45));
+        resultLabel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+
+        resultPanel.add(resultLabel, BorderLayout.CENTER);
     }
 
     /**
