@@ -2,6 +2,7 @@ package exam.seolheun5.calculator.ui;
 
 import exam.seolheun5.calculator.utils.RoundedButton;
 import exam.seolheun5.calculator.utils.Constants;
+import exam.seolheun5.calculator.logic.ButtonEventHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,6 +26,7 @@ import java.awt.*;
  *     <li>2024-10-14: 버튼 패널 버튼 색상 설정</li>
  *     <li>2024-10-14: 버튼 타입 변경</li>
  *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
+ *     <li>2024-10-15: 버튼 이벤트 처리 코드 작성</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
@@ -33,6 +35,8 @@ public class CalculatorPanel extends JPanel {
     private JPanel titlePanel;
     private JPanel resultPanel;
     private JPanel buttonPanel;
+
+    private JLabel resultLabel;
 
     /**
      * {@code CalculatorPanel}의 생성자.<br>
@@ -114,7 +118,7 @@ public class CalculatorPanel extends JPanel {
     }
 
     /**
-     *
+     * {@code createResultPanel}은 계산 결과를 표시해주는 패널.
      *
      * @author seolheun5(김은성, priberius5@gmail.com)
      *
@@ -131,7 +135,7 @@ public class CalculatorPanel extends JPanel {
         resultPanel = new JPanel(new BorderLayout());
         resultPanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
-        JLabel resultLabel = new JLabel("0", SwingConstants.RIGHT);
+        resultLabel = new JLabel("0", SwingConstants.RIGHT);
         resultLabel.setFont(new Font("Arial", Font.PLAIN, 45));
         resultLabel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
@@ -139,7 +143,7 @@ public class CalculatorPanel extends JPanel {
     }
 
     /**
-     *
+     * {@code createButtonPanel}은 계산기 버튼들이 위치하는 패널.
      *
      * @author seolheun5(김은성, priberius5 @ gmail.com)
      *
@@ -153,6 +157,7 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-14: 버튼 색상 설정</li>
      *     <li>2024-10-14: 라운드 버튼으로 버튼 변경</li>
      *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
+     *     <li>2024-10-15: 이벤트 처리를 위한 {@code ButtonEventHandler} 추가</li>
      * </ul>
      *
      * @see <a href="https://hamait.tistory.com/342">정규표현식 참고</a>
@@ -163,6 +168,8 @@ public class CalculatorPanel extends JPanel {
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         for(String label : Constants.BUTTONS_LIST) {
+            ButtonEventHandler beh = new ButtonEventHandler(resultLabel);
+
             RoundedButton button = new RoundedButton(label);
             button.setFont(new Font("SanSerif", Font.PLAIN, 18));
 
@@ -174,6 +181,8 @@ public class CalculatorPanel extends JPanel {
             } else {
                 button.setBackground(Constants.CALCULATOR_FUN_AND_OPERPAD_COLOR);
             }
+
+            button.addActionListener(beh);
 
             buttonPanel.add(button);
         }
