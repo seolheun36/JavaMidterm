@@ -13,7 +13,7 @@ import java.awt.*;
  * @author seolheun5(김은성, piberius5@gmail.com)
  *
  * @create 2024-10-12
- * @lastModified 2024-10-14
+ * @lastModified 2024-10-15
  *
  * @changelog
  * <ul>
@@ -24,6 +24,7 @@ import java.awt.*;
  *     <li>2024-10-14: 버튼 패널 생성 및 구성</li>
  *     <li>2024-10-14: 버튼 패널 버튼 색상 설정</li>
  *     <li>2024-10-14: 버튼 타입 변경</li>
+ *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
@@ -143,7 +144,7 @@ public class CalculatorPanel extends JPanel {
      * @author seolheun5(김은성, priberius5 @ gmail.com)
      *
      * @created 2024-10-12
-     * @lastModified 2024-10-14
+     * @lastModified 2024-10-15
      *
      * @changelog
      * <ul>
@@ -151,6 +152,7 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-14: 버튼 레이아웃 생성 및 설정</li>
      *     <li>2024-10-14: 버튼 색상 설정</li>
      *     <li>2024-10-14: 라운드 버튼으로 버튼 변경</li>
+     *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
      * </ul>
      *
      * @see <a href="https://hamait.tistory.com/342">정규표현식 참고</a>
@@ -162,7 +164,7 @@ public class CalculatorPanel extends JPanel {
 
         for(String label : Constants.BUTTONS_LIST) {
             RoundedButton button = new RoundedButton(label);
-            button.setFont(new Font("Arial", Font.PLAIN, 15));
+            button.setFont(new Font("SanSerif", Font.PLAIN, 18));
 
             if(label.matches("^[0-9±.]$")) {
                 button.setBackground(Constants.CALCULATOR_NUMBERPAD_COLOR);

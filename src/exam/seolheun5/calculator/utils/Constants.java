@@ -9,7 +9,7 @@ import java.awt.*;
  * @author seolheun5(김은성, priberius5@gmail.com)
  *
  * @create 2024-10-13
- * @lastModified 2024-10-14
+ * @lastModified 2024-10-15
  *
  * @changelog
  * <ul>
@@ -19,6 +19,7 @@ import java.awt.*;
  *     <li>2024-10-14: 배경 색상 상수명 오타 수정</li>
  *     <li>2024-10-14: 레이블 상수 및 레이블 리스트 선언</li>
  *     <li>2024-10-14: 버튼 색상 상수 선언 및 색상 상수명에 COLOR 추가</li>
+ *     <li>2024-10-15: 지우기 버튼 텍스트 변경</li>
  * </ul>
  *
  * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -55,7 +56,7 @@ public class Constants {
     // 기능
     private static final String BUTTON_CLEAR_ENTRY = "CE";
     private static final String BUTTON_ALL_CLEAR = "AC";
-    private static final String BUTTON_BACKSPACE = "BS";
+    private static final String BUTTON_BACKSPACE = "←";
 
     // 레이블 리스트
     public static final String[] BUTTONS_LIST = {
