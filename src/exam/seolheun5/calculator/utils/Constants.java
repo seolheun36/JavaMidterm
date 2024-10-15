@@ -20,6 +20,7 @@ import java.awt.*;
  *     <li>2024-10-14: 레이블 상수 및 레이블 리스트 선언</li>
  *     <li>2024-10-14: 버튼 색상 상수 선언 및 색상 상수명에 COLOR 추가</li>
  *     <li>2024-10-15: 지우기 버튼 텍스트 변경</li>
+ *     <li>2024-10-15: 외부 사용을 위한 일부 숫자 제외 레이블 상수 공개</li>
  * </ul>
  *
  * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -31,14 +32,14 @@ public class Constants {
 
     // 레이블 상수
     // 연산자
-    private static final String BUTTON_ADD = "+";
-    private static final String BUTTON_SUBTRACT = "-";
-    private static final String BUTTON_MULTIPLY = "×";
-    private static final String BUTTON_DIVIDE = "÷";
-    private static final String BUTTON_EQUALS = "=";
+    public static final String BUTTON_ADD = "+";
+    public static final String BUTTON_SUBTRACT = "-";
+    public static final String BUTTON_MULTIPLY = "×";
+    public static final String BUTTON_DIVIDE = "÷";
+    public static final String BUTTON_EQUALS = "=";
 
     // 숫자
-    private static final String BUTTON_ZERO = "0";
+    public static final String ZERO = "0";
     private static final String BUTTON_ONE = "1";
     private static final String BUTTON_TWO = "2";
     private static final String BUTTON_THREE = "3";
@@ -50,13 +51,13 @@ public class Constants {
     private static final String BUTTON_NINE = "9";
 
     // 기타
-    private static final String BUTTON_DOT = ".";
-    private static final String BUTTON_CHANGE_SIGN = "±";
+    public static final String BUTTON_DOT = ".";
+    public static final String BUTTON_REVERSE_SIGN = "±";
 
     // 기능
-    private static final String BUTTON_CLEAR_ENTRY = "CE";
-    private static final String BUTTON_ALL_CLEAR = "AC";
-    private static final String BUTTON_BACKSPACE = "←";
+    public static final String BUTTON_CLEAR_ENTRY = "CE";
+    public static final String BUTTON_ALL_CLEAR = "AC";
+    public static final String BUTTON_BACKSPACE = "←";
 
     // 레이블 리스트
     public static final String[] BUTTONS_LIST = {
@@ -76,8 +77,8 @@ public class Constants {
                 Constants.BUTTON_TWO,
                 Constants.BUTTON_THREE,
                 Constants.BUTTON_SUBTRACT,
-                Constants.BUTTON_CHANGE_SIGN,
-                Constants.BUTTON_ZERO,
+                Constants.BUTTON_REVERSE_SIGN,
+                Constants.ZERO,
                 Constants.BUTTON_DOT,
                 Constants.BUTTON_EQUALS
         };
