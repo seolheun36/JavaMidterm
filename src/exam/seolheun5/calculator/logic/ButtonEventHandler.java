@@ -28,9 +28,11 @@ import java.awt.event.ActionListener;
  */
 public class ButtonEventHandler implements ActionListener {
 
-    JLabel resultLabel;
-    String resultText;
-    String buttonText;
+    private JLabel resultLabel;
+    private String resultText;
+    private JLabel solutionLabel;
+    private String solutionText;
+    private String buttonText;
 
     /**
      * {@code ButtonEventHandler}의 생성자.
@@ -48,8 +50,9 @@ public class ButtonEventHandler implements ActionListener {
      *
      * @param resultLabel 결과 정보를 보여주는 {@code JLabel} 타입 변수
      */
-    public ButtonEventHandler(JLabel resultLabel) {
+    public ButtonEventHandler(JLabel resultLabel, JLabel solutionLabel) {
         this.resultLabel = resultLabel;
+        this.solutionLabel = solutionLabel;
     }
 
     /**
@@ -75,6 +78,7 @@ public class ButtonEventHandler implements ActionListener {
         JButton button = (JButton) e.getSource();
         buttonText = button.getText();
         resultText = resultLabel.getText();
+        solutionText = solutionLabel.getText();
 
         if(buttonText.matches("^[0-9]$")) {
             numCheck();
@@ -206,7 +210,14 @@ public class ButtonEventHandler implements ActionListener {
      * </ul>
      */
     private void addCheck() {
-
+        if(!solutionText.contains(Constants.BUTTON_ADD) &&
+           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
+           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
+           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            solutionText = resultText + Constants.BUTTON_ADD;
+            solutionLabel.setText(solutionText);
+            resultLabel.setText(Constants.ZERO);
+        }
     }
 
     /**
@@ -224,7 +235,14 @@ public class ButtonEventHandler implements ActionListener {
      * </ul>
      */
     private void subtractCheck() {
-
+        if(!solutionText.contains(Constants.BUTTON_ADD) &&
+           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
+           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
+           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            solutionText = resultText + Constants.BUTTON_SUBTRACT;
+            solutionLabel.setText(solutionText);
+            resultLabel.setText(Constants.ZERO);
+        }
     }
 
     /**
@@ -242,7 +260,14 @@ public class ButtonEventHandler implements ActionListener {
      * </ul>
      */
     private void multiplyCheck() {
-
+        if(!solutionText.contains(Constants.BUTTON_ADD) &&
+           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
+           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
+           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            solutionText = resultText + Constants.BUTTON_MULTIPLY;
+            solutionLabel.setText(solutionText);
+            resultLabel.setText(Constants.ZERO);
+        }
     }
 
     /**
@@ -260,7 +285,14 @@ public class ButtonEventHandler implements ActionListener {
      * </ul>
      */
     private void divideCheck() {
-
+        if(!solutionText.contains(Constants.BUTTON_ADD) &&
+           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
+           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
+           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            solutionText = resultText + Constants.BUTTON_DIVIDE;
+            solutionLabel.setText(solutionText);
+            resultLabel.setText(Constants.ZERO);
+        }
     }
 
     /**
@@ -278,6 +310,8 @@ public class ButtonEventHandler implements ActionListener {
      * </ul>
      */
     private void equalsCheck() {
-
+        solutionText = solutionText + resultText + Constants.BUTTON_EQUALS;
+        solutionLabel.setText(solutionText);
+        resultLabel.setText(Constants.ZERO);
     }
 }

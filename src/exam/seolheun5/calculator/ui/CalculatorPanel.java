@@ -139,7 +139,7 @@ public class CalculatorPanel extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
 
-        solutionLabel = new JLabel("", SwingConstants.RIGHT);
+        solutionLabel = new JLabel(" ", SwingConstants.RIGHT);
         solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
         solutionLabel.setForeground(Constants.SOLUTION_LABEL_COLOR);
         solutionLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
@@ -185,7 +185,7 @@ public class CalculatorPanel extends JPanel {
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         for(String label : Constants.BUTTONS_LIST) {
-            ButtonEventHandler beh = new ButtonEventHandler(resultLabel);
+            ButtonEventHandler beh = new ButtonEventHandler(resultLabel, solutionLabel);
 
             RoundedButton button = new RoundedButton(label);
             button.setFont(new Font("SanSerif", Font.PLAIN, 18));
