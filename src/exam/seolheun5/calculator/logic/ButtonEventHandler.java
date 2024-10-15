@@ -20,6 +20,8 @@ import java.awt.event.ActionListener;
  *     <li>2024-10-15: 이벤트 처리를 위한 필드 설정 및 이벤트 처리 코드 작성</li>
  *     <li>2024-10-15: 결과값 처리 메서드를 위한 {@code resultText}, {@code buttonText} 필드로 변환</li>
  *     <li>2024-10-15: 숫자, '.', 부호변환에 대한 기능 처리 코드 작성</li>
+ *     <li>2024-10-15: 지우기 버튼에 대한 기능 처리 코드 작성</li>
+ *     <li>2024-10-15: 연산 체크 메서드 생성</li>
  * </ul>
  *
  * @see <a href="https://velog.io/@sunk2205/JAVA-Swing-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC">클래스 사용 이벤트 처리</a>
@@ -82,6 +84,16 @@ public class ButtonEventHandler implements ActionListener {
             reverseCheck();
         } else if(buttonText.equals(Constants.BUTTON_BACKSPACE)) {
             backspaceCheck();
+        } else if(buttonText.equals(Constants.BUTTON_ADD)) {
+            addCheck();
+        } else if(buttonText.equals(Constants.BUTTON_SUBTRACT)) {
+            subtractCheck();
+        } else if(buttonText.equals(Constants.BUTTON_MULTIPLY)) {
+            multiplyCheck();
+        } else if(buttonText.equals(Constants.BUTTON_DIVIDE)) {
+            divideCheck();
+        } else if(buttonText.equals(Constants.BUTTON_EQUALS)) {
+            equalsCheck();
         }
     }
 
@@ -177,5 +189,95 @@ public class ButtonEventHandler implements ActionListener {
         } else {
             resultLabel.setText(resultText.substring(0, resultText.length() - 1));
         }
+    }
+
+    /**
+     * {@code addCheck} 메서드는 '+' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-15
+     * @lastModified 2024-10-15
+     *
+     * @changelog
+     * <ul>
+     *     <li>2024-10-15: 최초 생성</li>
+     *     <li>2024-10-15: '+' 입력에 대한 결과값 처리 기능 작성</li>
+     * </ul>
+     */
+    private void addCheck() {
+
+    }
+
+    /**
+     * {@code subtractCheck} 메서드는 '-' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-15
+     * @lastModified 2024-10-15
+     *
+     * @changelog
+     * <ul>
+     *     <li>2024-10-15: 최초 생성</li>
+     *     <li>2024-10-15: '-' 입력에 대한 결과값 처리 기능 작성</li>
+     * </ul>
+     */
+    private void subtractCheck() {
+
+    }
+
+    /**
+     * {@code multiplyCheck} 메서드는 '×' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-15
+     * @lastModified 2024-10-15
+     *
+     * @changelog
+     * <ul>
+     *     <li>2024-10-15: 최초 생성</li>
+     *     <li>2024-10-15: '×' 입력에 대한 결과값 처리 기능 작성</li>
+     * </ul>
+     */
+    private void multiplyCheck() {
+
+    }
+
+    /**
+     * {@code divideCheck} 메서드는 '÷' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-15
+     * @lastModified 2024-10-15
+     *
+     * @changelog
+     * <ul>
+     *     <li>2024-10-15: 최초 생성</li>
+     *     <li>2024-10-15: '÷' 입력에 대한 결과값 처리 기능 작성</li>
+     * </ul>
+     */
+    private void divideCheck() {
+
+    }
+
+    /**
+     * {@code equalsCheck} 메서드는 '=' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-15
+     * @lastModified 2024-10-15
+     *
+     * @changelog
+     * <ul>
+     *     <li>2024-10-15: 최초 생성</li>
+     *     <li>2024-10-15: '=' 입력에 대한 결과값 처리 기능 작성</li>
+     * </ul>
+     */
+    private void equalsCheck() {
+
     }
 }
