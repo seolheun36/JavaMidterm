@@ -37,6 +37,7 @@ public class CalculatorPanel extends JPanel {
     private JPanel buttonPanel;
 
     private JLabel resultLabel;
+    private JLabel solutionLabel;
 
     /**
      * {@code CalculatorPanel}의 생성자.<br>
@@ -111,8 +112,8 @@ public class CalculatorPanel extends JPanel {
         titlePanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
         JLabel titleLabel = new JLabel(Constants.STANDARD_TITLE, SwingConstants.LEFT);
-        titleLabel.setFont(new Font("Arial", Font.PLAIN, 20));
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        titleLabel.setFont(new Font("SanSerif", Font.PLAIN, 20));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 10, 15));
 
         titlePanel.add(titleLabel, BorderLayout.WEST);
     }
@@ -132,14 +133,30 @@ public class CalculatorPanel extends JPanel {
      * </ul>
      */
     private void createResultPanel() {
-        resultPanel = new JPanel(new BorderLayout());
+        resultPanel = new JPanel(new GridBagLayout());
         resultPanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
-        resultLabel = new JLabel("0", SwingConstants.RIGHT);
-        resultLabel.setFont(new Font("Arial", Font.PLAIN, 45));
-        resultLabel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.BOTH;
 
-        resultPanel.add(resultLabel, BorderLayout.CENTER);
+        solutionLabel = new JLabel("", SwingConstants.RIGHT);
+        solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
+        solutionLabel.setForeground(Constants.SOLUTION_LABEL_COLOR);
+        solutionLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
+
+        resultLabel = new JLabel("0", SwingConstants.RIGHT);
+        resultLabel.setFont(new Font("SanSerif", Font.PLAIN, 45));
+        resultLabel.setBorder(BorderFactory.createEmptyBorder(0, 15, 5, 15));
+
+        gbc.weightx = 1;
+        gbc.weighty = 0.2;
+        gbc.gridy = 0;
+        resultPanel.add(solutionLabel, gbc);
+
+        gbc.weightx = 1;
+        gbc.weighty = 0.8;
+        gbc.gridy = 1;
+        resultPanel.add(resultLabel, gbc);
     }
 
     /**

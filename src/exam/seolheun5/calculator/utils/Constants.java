@@ -89,4 +89,5 @@ public class Constants {
     public static final Color CALCULATOR_NUMBERPAD_COLOR = new Color(0xfcfcfc);
     public static final Color CALCULATOR_FUN_AND_OPERPAD_COLOR = new Color(0xf6f6f6);
     public static final Color CALCULATOR_EQUALS_COLOR = new Color(0x7b7161);
+    public static final Color SOLUTION_LABEL_COLOR = new Color(0x939393);
 }
