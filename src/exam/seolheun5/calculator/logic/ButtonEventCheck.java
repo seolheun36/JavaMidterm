@@ -68,10 +68,12 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void numCheck() {
-        if(resultText.equals(Constants.ZERO)) {
+        if(!solutionText.contains(Constants.EQUALS)) {
+            if (resultText.equals(Constants.ZERO)) {
                 resultLabel.setText(buttonText);
-        } else {
-            resultLabel.setText(resultText + buttonText);
+            } else {
+                resultLabel.setText(resultText + buttonText);
+            }
         }
     }
 
@@ -84,7 +86,7 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void dotCheck() {
-        if(!resultText.contains(Constants.DOT)) {
+        if (!resultText.contains(Constants.DOT) && !solutionText.contains(Constants.EQUALS)) {
             resultLabel.setText(resultText + buttonText);
         }
     }
@@ -100,7 +102,7 @@ public class ButtonEventCheck {
      * @see <a href="https://velog.io/@e_juhee/String-to-Number">부호변환 참고</a>
      */
     protected void reverseCheck() {
-        if(!resultText.equals(Constants.ZERO)) {
+        if (!resultText.equals(Constants.ZERO) && !solutionText.contains(Constants.EQUALS)) {
             try {
                 int reverseNum = Integer.parseInt(resultText) * -1;
                 resultLabel.setText(String.valueOf(reverseNum));
@@ -120,12 +122,14 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void backspaceCheck() {
-        if(resultText.startsWith(Constants.SUBTRACT) && resultText.length() == 2) {
-            resultLabel.setText(Constants.ZERO);
-        } else if(resultText.length() == 1) {
-            resultLabel.setText(Constants.ZERO);
-        } else {
-            resultLabel.setText(resultText.substring(0, resultText.length() - 1));
+        if(!solutionText.contains(Constants.EQUALS)) {
+            if(resultText.startsWith(Constants.SUBTRACT) && resultText.length() == 2) {
+                resultLabel.setText(Constants.ZERO);
+            } else if(resultText.length() == 1) {
+                resultLabel.setText(Constants.ZERO);
+            } else {
+                resultLabel.setText(resultText.substring(0, resultText.length() - 1));
+            }
         }
     }
 
@@ -230,23 +234,29 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void equalsCheck() {
-        if(resultText.endsWith(Constants.DOT)) {
-            resultText = resultText.substring(0, resultText.length() - 1);
-        }
+        if(!solutionText.contains(Constants.EQUALS) &&
+                (solutionText.contains(Constants.ADD) ||
+                 solutionText.contains(Constants.SUBTRACT) ||
+                 solutionText.contains(Constants.MULTIPLY) ||
+                 solutionText.contains(Constants.DIVIDE))) {
+            if(resultText.endsWith(Constants.DOT)) {
+                resultText = resultText.substring(0, resultText.length() - 1);
+            }
 
-        solutionText = solutionText + resultText + Constants.EQUALS;
-        solutionLabel.setText(solutionText);
+            solutionText = solutionText + resultText + Constants.EQUALS;
+            solutionLabel.setText(solutionText);
 
-        Calculate c = new Calculate(resultLabel, solutionLabel, buttonText);
+            Calculate c = new Calculate(resultLabel, solutionLabel, buttonText);
 
-        if(solutionText.contains(Constants.ADD)) {
-            c.calculateAdd();
-        } else if(solutionText.contains(Constants.SUBTRACT)) {
-            c.calculateSubtract();
-        } else if(solutionText.contains(Constants.MULTIPLY)) {
-            c.calculateMultiply();
-        } else if(solutionText.contains(Constants.DIVIDE)) {
-            c.calculateDivide();
+            if(solutionText.contains(Constants.ADD)) {
+                c.calculateAdd();
+            } else if(solutionText.contains(Constants.SUBTRACT)) {
+                c.calculateSubtract();
+            } else if(solutionText.contains(Constants.MULTIPLY)) {
+                c.calculateMultiply();
+            } else if(solutionText.contains(Constants.DIVIDE)) {
+                c.calculateDivide();
+            }
         }
     }
 }
