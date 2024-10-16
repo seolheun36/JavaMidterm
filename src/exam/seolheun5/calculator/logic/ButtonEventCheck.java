@@ -24,6 +24,7 @@ import javax.swing.*;
  *         <li>2024-10-15: 연산 체크 메서드 작성</li>
  *     </ul>
  *     <li>2024-10-16: changelog 통합</li>
+ *     <li>소수점이 마지막에 위치할 때 연산자 사용시 예외처리</li>
  * </ul>
  */
 public class ButtonEventCheck {
@@ -133,18 +134,17 @@ public class ButtonEventCheck {
      * @author seolheun5
      *
      * @create 2024-10-15
-     * @lastModified 2024-10-15
-     *
-     * @TODO
-     * <ul>
-     *     <li> 소수점이 마지막에 올 때 예외처리 후 solutionLabel 지정 </li>
-     * </ul>
+     * @lastModified 2024-10-16
      */
     protected void addCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
            !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
            !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
            !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+                resultText = resultText.substring(0, resultText.length() - 1);
+            }
+
             solutionText = resultText + Constants.BUTTON_ADD;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
@@ -157,13 +157,17 @@ public class ButtonEventCheck {
      * @author seolheun5
      *
      * @create 2024-10-15
-     * @lastModified 2024-10-15
+     * @lastModified 2024-10-16
      */
     protected void subtractCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
            !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
            !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
            !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+                resultText = resultText.substring(0, resultText.length() - 1);
+            }
+
             solutionText = resultText + Constants.BUTTON_SUBTRACT;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
@@ -176,13 +180,17 @@ public class ButtonEventCheck {
      * @author seolheun5
      *
      * @create 2024-10-15
-     * @lastModified 2024-10-15
+     * @lastModified 2024-10-16
      */
     protected void multiplyCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
            !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
            !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
            !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+                resultText = resultText.substring(0, resultText.length() - 1);
+            }
+
             solutionText = resultText + Constants.BUTTON_MULTIPLY;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
@@ -195,13 +203,17 @@ public class ButtonEventCheck {
      * @author seolheun5
      *
      * @create 2024-10-15
-     * @lastModified 2024-10-15
+     * @lastModified 2024-10-16
      */
     protected void divideCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
            !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
            !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
            !solutionText.contains(Constants.BUTTON_DIVIDE)) {
+            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+                resultText = resultText.substring(0, resultText.length() - 1);
+            }
+
             solutionText = resultText + Constants.BUTTON_DIVIDE;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
@@ -214,9 +226,13 @@ public class ButtonEventCheck {
      * @author seolheun5
      *
      * @create 2024-10-15
-     * @lastModified 2024-10-15
+     * @lastModified 2024-10-16
      */
     protected void equalsCheck() {
+        if(resultText.endsWith(Constants.BUTTON_DOT)) {
+            resultText = resultText.substring(0, resultText.length() - 1);
+        }
+
         solutionText = solutionText + resultText + Constants.BUTTON_EQUALS;
         solutionLabel.setText(solutionText);
         resultLabel.setText(Constants.ZERO);
