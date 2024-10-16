@@ -241,6 +241,12 @@ public class ButtonEventCheck {
 
         if(solutionText.contains(Constants.ADD)) {
             c.calculateAdd();
+        } else if(solutionText.contains(Constants.SUBTRACT)) {
+            c.calculateSubtract();
+        } else if(solutionText.contains(Constants.MULTIPLY)) {
+            c.calculateMultiply();
+        } else if(solutionText.contains(Constants.DIVIDE)) {
+            c.calculateDivide();
         }
     }
 }

@@ -59,20 +59,74 @@ public class Calculate {
      * @lastModified 2024-10-16
      */
     public void calculateAdd() {
-        try {
-            int firstNum = Integer.parseInt(solutionText.substring(0, (solutionText.indexOf(Constants.ADD))));
-            int secondNum = Integer.parseInt(solutionText.substring((solutionText.indexOf(Constants.ADD) + 1), solutionText.length() - 1));
-            resultLabel.setText(String.valueOf(firstNum + secondNum));
-        } catch (NumberFormatException e) {
-            double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.ADD))));
-            double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.ADD) + 1), solutionText.length() - 1));
+        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.ADD))));
+        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.ADD) + 1), solutionText.length() - 1));
 
-            String result = String.valueOf(firstNum + secondNum);
-            if(result.substring(result.length() - 2).equals(".0")) {
-                result = result.substring(0, result.length() - 2);
-            }
-
-            resultLabel.setText(result);
+        String result = String.valueOf(firstNum + secondNum);
+        if(result.substring(result.length() - 2).equals(".0")) {
+            result = result.substring(0, result.length() - 2);
         }
+
+        resultLabel.setText(result);
+    }
+
+    /**
+     * {@code calculateSubtract} 메서드는 빼기를 수행하는 계산 메서드.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-16
+     * @lastModified 2024-10-16
+     */
+    public void calculateSubtract() {
+        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT))));
+        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT) + 1), solutionText.length() - 1));
+
+        String result = String.valueOf(firstNum - secondNum);
+        if(result.substring(result.length() - 2).equals(".0")) {
+            result = result.substring(0, result.length() - 2);
+        }
+
+        resultLabel.setText(result);
+    }
+
+    /**
+     * {@code calculateMultiply} 메서드는 곱하기를 수행하는 계산 메서드.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-16
+     * @lastModified 2024-10-16
+     */
+    public void calculateMultiply() {
+        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.MULTIPLY))));
+        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.MULTIPLY) + 1), solutionText.length() - 1));
+
+        String result = String.valueOf(firstNum * secondNum);
+        if(result.substring(result.length() - 2).equals(".0")) {
+            result = result.substring(0, result.length() - 2);
+        }
+
+        resultLabel.setText(result);
+    }
+
+    /**
+     * {@code calculateDivide} 메서드는 나누기를 수행하는 계산 메서드.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-16
+     * @lastModified 2024-10-16
+     */
+    public void calculateDivide() {
+        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.DIVIDE))));
+        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.DIVIDE) + 1), solutionText.length() - 1));
+
+        String result = String.valueOf(firstNum / secondNum);
+        if(result.substring(result.length() - 2).equals(".0")) {
+            result = result.substring(0, result.length() - 2);
+        }
+
+        resultLabel.setText(result);
     }
 }
