@@ -4,6 +4,28 @@ import exam.seolheun5.calculator.utils.Constants;
 
 import javax.swing.*;
 
+/**
+ * {@code ButtonEventCheck} 클라스.<br>
+ * 기존 {@code ButtonEventHandler}에 있던 버튼 이벤트 체크 메서드들을 분리 작성하기 위한 클래스.
+ *
+ * @author seolheun5
+ *
+ * @create 2024-10-16
+ * @lastModified 2024-10-16
+ *
+ * @changelog
+ * <ul>
+ *     <li>2024-10-15: 최초 생성</li>
+ *     <li>2024-10-16: 기존 {@code ButtonEventHandler}에 존재하는 이벤트 체크 메서드 및 changelog 이전</li>
+ *     <ul>
+ *         <li>2024-10-15: 숫자, '.', 부호변환에 대한 기능 처리 메서드 작성</li>
+ *         <li>2024-10-15: 지우기 버튼에 대한 기능 처리 메서드 작성</li>
+ *         <li>2024-10-15: 연산 체크 메서드 생성</li>
+ *         <li>2024-10-15: 연산 체크 메서드 작성</li>
+ *     </ul>
+ *     <li>2024-10-16: changelog 통합</li>
+ * </ul>
+ */
 public class ButtonEventCheck {
 
     private JLabel resultLabel;
@@ -42,12 +64,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: 숫자 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void numCheck() {
         if(resultText.equals(Constants.ZERO)) {
@@ -64,12 +80,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '.' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void dotCheck() {
         if(!resultText.contains(Constants.BUTTON_DOT)) {
@@ -84,12 +94,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: 부호변환 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      *
      * @see <a href="https://velog.io/@e_juhee/String-to-Number">부호변환 참고</a>
      */
@@ -112,12 +116,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '←' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void backspaceCheck() {
         if(resultText.startsWith(Constants.BUTTON_SUBTRACT) && resultText.length() == 2) {
@@ -136,12 +134,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '+' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      *
      * @TODO
      * <ul>
@@ -166,12 +158,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '-' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void subtractCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
@@ -191,12 +177,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '×' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void multiplyCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
@@ -216,12 +196,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '÷' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void divideCheck() {
         if(!solutionText.contains(Constants.BUTTON_ADD) &&
@@ -241,12 +215,6 @@ public class ButtonEventCheck {
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-15: 최초 생성</li>
-     *     <li>2024-10-15: '=' 입력에 대한 결과값 처리 기능 작성</li>
-     * </ul>
      */
     protected void equalsCheck() {
         solutionText = solutionText + resultText + Constants.BUTTON_EQUALS;

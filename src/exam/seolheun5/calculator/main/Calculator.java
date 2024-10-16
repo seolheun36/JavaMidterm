@@ -16,6 +16,8 @@ import javax.swing.*;
  * @changelog
  * <ul>
  *     <li>2024-10-11: 최초 생성 (seolheun5)</li>
+ *     <li>2024-10-12: {@code CalculatorFrame} 호출 방식 변경</li>
+ *     <li>2024-10-16: changelog 통합</li>
  * </ul>
  */
 public class Calculator {
@@ -27,12 +29,6 @@ public class Calculator {
      *
      * @created 2024-10-11
      * @lastModified 2024-10-12
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-11: 최초 생성</li>
-     *     <li>2024-10-12: {@code CalculatorFrame} 호출 방식 변경</li>
-     * </ul>
      *
      * @see
      */

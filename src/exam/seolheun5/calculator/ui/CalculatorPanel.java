@@ -55,6 +55,7 @@ public class CalculatorPanel extends JPanel {
      *     <li>2024-10-14: 결과 패널 추가</li>
      *     <li>2024-10-14: 버튼 패널 추가</li>
      *     <li>2024-10-14: 메인 패널 배치관리자 변경</li>
+     *     <li>2024-10-16: changelog 통합</li>
      * </ul>
      *
      * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -99,13 +100,6 @@ public class CalculatorPanel extends JPanel {
      *
      * @created 2024-10-12
      * @lastModified 2024-10-13
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-12: 최초 생성</li>
-     *     <li>2024-10-12: 타이틀 레이아웃 생성 및 설정</li>
-     *     <li>2024-10-13: 타이틀 패널 배경색 설정</li>
-     * </ul>
      */
     private void createTitlePanel() {
         titlePanel = new JPanel(new BorderLayout());
@@ -125,12 +119,6 @@ public class CalculatorPanel extends JPanel {
      *
      * @created 2024-10-12
      * @lastModified 2024-10-14
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-12: 최초 생성</li>
-     *     <li>2024-10-14: 결과 레이아웃 생성 및 설정</li>
-     * </ul>
      */
     private void createResultPanel() {
         resultPanel = new JPanel(new GridBagLayout());
@@ -166,16 +154,6 @@ public class CalculatorPanel extends JPanel {
      *
      * @created 2024-10-12
      * @lastModified 2024-10-15
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-12: 최초 생성</li>
-     *     <li>2024-10-14: 버튼 레이아웃 생성 및 설정</li>
-     *     <li>2024-10-14: 버튼 색상 설정</li>
-     *     <li>2024-10-14: 라운드 버튼으로 버튼 변경</li>
-     *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
-     *     <li>2024-10-15: 이벤트 처리를 위한 {@code ButtonEventHandler} 추가</li>
-     * </ul>
      *
      * @see <a href="https://hamait.tistory.com/342">정규표현식 참고</a>
      */

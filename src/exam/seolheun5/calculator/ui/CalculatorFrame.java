@@ -19,6 +19,7 @@ import javax.swing.*;
  *     <li>2024-10-12: 프레임 위치 설정</li>
  *     <li>2024-10-12: 패널 클래스 연동</li>
  *     <li>2024-10-14: 앱 아이콘 변경</li>
+ *     <li>2024-10-16: changelog 통합</li>
  * </ul>
  */
 public class CalculatorFrame extends JFrame {
@@ -31,15 +32,6 @@ public class CalculatorFrame extends JFrame {
      *
      * @created 2024-10-11
      * @lastModified 2024-10-14
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-11: 최초 생성</li>
-     *     <li>2024-10-11: 프레임 기본 설정(title, default close op, size)</li>
-     *     <li>2024-10-12: 프레임 중앙에 띄우기</li>
-     *     <li>2024-10-12: CalculatorPanel CalculatorFrame에 add</li>
-     *     <li>2024-10-14: 앱 아이콘 변경</li>
-     * </ul>
      *
      * @see <a href="<a href="https://kr.freepik.com/search#uuid=84ebb90f-80fa-498c-a7c4-190a24030d89">UIcons 제작 아이콘</a>">아이콘 출처</a>
      * @see <a href="https://selfinvestfriends.tistory.com/15">패널 중앙에 띄우기 참고</a>
