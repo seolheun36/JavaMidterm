@@ -11,12 +11,14 @@ import javax.swing.*;
  * @author seolheun5
  *
  * @create 2024-10-16
- * @lastModified 2024-10-16
+ * @lastModified 2024-10-17
  *
  * @changelog
  * <ul>
  *     <li>2024-10-16: 최초 생성</li>
  *     <li>2024-10-16: 더하기 계산 메서드 작성</li>
+ *     <li>2024-10-16: 빼기, 곱하기, 나누기 계산 메서드 작 성</li>
+ *     <li>2024-10-17: 첫 번째 숫자가 음수일 때 버그 수정</li>
  * </ul>
  */
 public class Calculate {
@@ -79,8 +81,18 @@ public class Calculate {
      * @lastModified 2024-10-16
      */
     public void calculateSubtract() {
-        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT))));
-        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT) + 1), solutionText.length() - 1));
+        double firstNum;
+        double secondNum;
+
+        if(solutionText.startsWith(Constants.SUBTRACT)) {
+            int firstIndex = solutionText.indexOf(Constants.SUBTRACT);
+
+            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT, firstIndex + 1))));
+            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT, firstIndex + 1) + 1), solutionText.length() - 1));
+        } else {
+            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT))));
+            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT) + 1), solutionText.length() - 1));
+        }
 
         String result = String.valueOf(firstNum - secondNum);
         if(result.substring(result.length() - 2).equals(".0")) {
