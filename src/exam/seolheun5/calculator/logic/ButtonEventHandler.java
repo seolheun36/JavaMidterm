@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  * @author seolheun5
  *
  * @create 2024-10-15
- * @lastModified 2024-10-15
+ * @lastModified 2024-10-16
  *
  * @changelog
  * <ul>
@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
  *     <li>2024-10-15: 이벤트 처리를 위한 필드 설정 및 이벤트 처리 코드 작성</li>
  *     <li>2024-10-15: 결과값 처리 메서드를 위한 {@code resultText}, {@code buttonText} 필드로 변환</li>
  *     <li>2024-10-16: changelog 통합 및 changelog 이전</li>
+ *     <li>2024-10-16: all clear, clear entry 체크 메서드 연동</li>
  * </ul>
  *
  * @see <a href="https://velog.io/@sunk2205/JAVA-Swing-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC">클래스 사용 이벤트 처리</a>
@@ -82,6 +83,10 @@ public class ButtonEventHandler implements ActionListener {
             bec.divideCheck();
         } else if(buttonText.equals(Constants.EQUALS)) {
             bec.equalsCheck();
+        } else if(buttonText.equals(Constants.BUTTON_ALL_CLEAR)) {
+            bec.clearAllCheck();
+        } else if(buttonText.equals(Constants.BUTTON_CLEAR_ENTRY)) {
+            bec.clearEntryCheck();
         }
     }
 }

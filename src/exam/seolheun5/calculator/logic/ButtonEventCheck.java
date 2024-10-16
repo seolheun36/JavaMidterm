@@ -26,6 +26,8 @@ import javax.swing.*;
  *     </ul>
  *     <li>2024-10-16: changelog 통합</li>
  *     <li>소수점이 마지막에 위치할 때 연산자 사용시 예외처리</li>
+ *     <li>2024-10-16: '=' 버튼 이벤트 버그 수정</li>
+ *     <li>2024-10-16: all clear, clear entyr 버튼에 대한 기능 처리 메서드 작성</li>
  * </ul>
  */
 public class ButtonEventCheck {
@@ -257,6 +259,36 @@ public class ButtonEventCheck {
             } else if(solutionText.contains(Constants.DIVIDE)) {
                 c.calculateDivide();
             }
+        }
+    }
+
+    /**
+     * {@code clearAllCheck} 메서드는 'AC' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-16
+     * @lastModified 2024-10-16
+     */
+    protected void clearAllCheck() {
+        resultLabel.setText("0");
+        solutionLabel.setText(" ");
+    }
+
+    /**
+     * {@code clearEntryCheck} 메서드는 'CE' 입력에 대한 결과값 처리 기능을 담당함.
+     *
+     * @author seolheun5
+     *
+     * @create 2024-10-16
+     * @lastModified 2024-10-16
+     */
+    protected void clearEntryCheck() {
+        if(solutionText.contains(Constants.EQUALS)) {
+            resultLabel.setText("0");
+            solutionLabel.setText(" ");
+        } else {
+            resultLabel.setText("0");
         }
     }
 }
