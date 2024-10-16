@@ -40,7 +40,7 @@ public class CalculatorFrame extends JFrame {
     public CalculatorFrame() {
         setTitle("Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(335, 540);
+        setSize(350, 550);
         setLocationRelativeTo(null);
 
         Image icon = new ImageIcon(getClass().getResource("../resources/icons/icon.png")).getImage();
