@@ -1,6 +1,7 @@
 package exam.seolheun5.calculator.logic;
 
 import exam.seolheun5.calculator.utils.Constants;
+import exam.seolheun5.calculator.logic.Calculate;
 
 import javax.swing.*;
 
@@ -33,8 +34,8 @@ public class ButtonEventCheck {
     private JLabel solutionLabel;
 
     private String buttonText;
-    String resultText;
-    String solutionText;
+    private String resultText;
+    private String solutionText;
 
     /**
      * {@code ButtonEventCheck} 클래스의 생성자.<br>
@@ -45,9 +46,9 @@ public class ButtonEventCheck {
      * @create 2024-10-16
      * @lastModified 2024-10-16
      *
-     * @param resultLabel {@code JLabel} 타입 변수
-     * @param solutionLabel {@code JLabel} 타입 변수
-     * @param buttonText {@code String} 타입 변수
+     * @param resultLabel 결과 정보를 보여주는 {@code JLabel} 타입 변수
+     * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
+     * @param buttonText 버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
      */
     public ButtonEventCheck(JLabel resultLabel, JLabel solutionLabel, String buttonText) {
         this.resultLabel = resultLabel;
@@ -83,7 +84,7 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void dotCheck() {
-        if(!resultText.contains(Constants.BUTTON_DOT)) {
+        if(!resultText.contains(Constants.DOT)) {
             resultLabel.setText(resultText + buttonText);
         }
     }
@@ -119,7 +120,7 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void backspaceCheck() {
-        if(resultText.startsWith(Constants.BUTTON_SUBTRACT) && resultText.length() == 2) {
+        if(resultText.startsWith(Constants.SUBTRACT) && resultText.length() == 2) {
             resultLabel.setText(Constants.ZERO);
         } else if(resultText.length() == 1) {
             resultLabel.setText(Constants.ZERO);
@@ -137,15 +138,15 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void addCheck() {
-        if(!solutionText.contains(Constants.BUTTON_ADD) &&
-           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
-           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
-           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
-            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+        if(!solutionText.contains(Constants.ADD) &&
+           !solutionText.contains(Constants.SUBTRACT) &&
+           !solutionText.contains(Constants.MULTIPLY) &&
+           !solutionText.contains(Constants.DIVIDE)) {
+            if(resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
-            solutionText = resultText + Constants.BUTTON_ADD;
+            solutionText = resultText + Constants.ADD;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
         }
@@ -160,15 +161,15 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void subtractCheck() {
-        if(!solutionText.contains(Constants.BUTTON_ADD) &&
-           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
-           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
-           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
-            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+        if(!solutionText.contains(Constants.ADD) &&
+           !solutionText.contains(Constants.SUBTRACT) &&
+           !solutionText.contains(Constants.MULTIPLY) &&
+           !solutionText.contains(Constants.DIVIDE)) {
+            if(resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
-            solutionText = resultText + Constants.BUTTON_SUBTRACT;
+            solutionText = resultText + Constants.SUBTRACT;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
         }
@@ -183,15 +184,15 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void multiplyCheck() {
-        if(!solutionText.contains(Constants.BUTTON_ADD) &&
-           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
-           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
-           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
-            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+        if(!solutionText.contains(Constants.ADD) &&
+           !solutionText.contains(Constants.SUBTRACT) &&
+           !solutionText.contains(Constants.MULTIPLY) &&
+           !solutionText.contains(Constants.DIVIDE)) {
+            if(resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
-            solutionText = resultText + Constants.BUTTON_MULTIPLY;
+            solutionText = resultText + Constants.MULTIPLY;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
         }
@@ -206,15 +207,15 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void divideCheck() {
-        if(!solutionText.contains(Constants.BUTTON_ADD) &&
-           !solutionText.contains(Constants.BUTTON_SUBTRACT) &&
-           !solutionText.contains(Constants.BUTTON_MULTIPLY) &&
-           !solutionText.contains(Constants.BUTTON_DIVIDE)) {
-            if(resultText.endsWith(Constants.BUTTON_DOT)) {
+        if(!solutionText.contains(Constants.ADD) &&
+           !solutionText.contains(Constants.SUBTRACT) &&
+           !solutionText.contains(Constants.MULTIPLY) &&
+           !solutionText.contains(Constants.DIVIDE)) {
+            if(resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
-            solutionText = resultText + Constants.BUTTON_DIVIDE;
+            solutionText = resultText + Constants.DIVIDE;
             solutionLabel.setText(solutionText);
             resultLabel.setText(Constants.ZERO);
         }
@@ -229,12 +230,17 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void equalsCheck() {
-        if(resultText.endsWith(Constants.BUTTON_DOT)) {
+        if(resultText.endsWith(Constants.DOT)) {
             resultText = resultText.substring(0, resultText.length() - 1);
         }
 
-        solutionText = solutionText + resultText + Constants.BUTTON_EQUALS;
+        solutionText = solutionText + resultText + Constants.EQUALS;
         solutionLabel.setText(solutionText);
-        resultLabel.setText(Constants.ZERO);
+
+        Calculate c = new Calculate(resultLabel, solutionLabel, buttonText);
+
+        if(solutionText.contains(Constants.ADD)) {
+            c.calculateAdd();
+        }
     }
 }

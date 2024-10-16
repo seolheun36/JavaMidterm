@@ -1,7 +1,6 @@
 package exam.seolheun5.calculator.logic;
 
 import exam.seolheun5.calculator.utils.Constants;
-import exam.seolheun5.calculator.logic.ButtonEventCheck;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -67,21 +66,21 @@ public class ButtonEventHandler implements ActionListener {
 
         if(buttonText.matches("^[0-9]$")) {
             bec.numCheck();
-        } else if(buttonText.equals(Constants.BUTTON_DOT)) {
+        } else if(buttonText.equals(Constants.DOT)) {
             bec.dotCheck();
         } else if(buttonText.equals(Constants.BUTTON_REVERSE_SIGN)) {
             bec.reverseCheck();
         } else if(buttonText.equals(Constants.BUTTON_BACKSPACE)) {
             bec.backspaceCheck();
-        } else if(buttonText.equals(Constants.BUTTON_ADD)) {
+        } else if(buttonText.equals(Constants.ADD)) {
             bec.addCheck();
-        } else if(buttonText.equals(Constants.BUTTON_SUBTRACT)) {
+        } else if(buttonText.equals(Constants.SUBTRACT)) {
             bec.subtractCheck();
-        } else if(buttonText.equals(Constants.BUTTON_MULTIPLY)) {
+        } else if(buttonText.equals(Constants.MULTIPLY)) {
             bec.multiplyCheck();
-        } else if(buttonText.equals(Constants.BUTTON_DIVIDE)) {
+        } else if(buttonText.equals(Constants.DIVIDE)) {
             bec.divideCheck();
-        } else if(buttonText.equals(Constants.BUTTON_EQUALS)) {
+        } else if(buttonText.equals(Constants.EQUALS)) {
             bec.equalsCheck();
         }
     }

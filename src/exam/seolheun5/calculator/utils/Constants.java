@@ -9,7 +9,7 @@ import java.awt.*;
  * @author seolheun5(김은성, priberius5@gmail.com)
  *
  * @create 2024-10-13
- * @lastModified 2024-10-15
+ * @lastModified 2024-10-16
  *
  * @changelog
  * <ul>
@@ -21,6 +21,7 @@ import java.awt.*;
  *     <li>2024-10-14: 버튼 색상 상수 선언 및 색상 상수명에 COLOR 추가</li>
  *     <li>2024-10-15: 지우기 버튼 텍스트 변경</li>
  *     <li>2024-10-15: 외부 사용을 위한 일부 숫자 제외 레이블 상수 공개</li>
+ *     <li>2024-10-16: 버튼 외에 다른 역할도 수행하는 상수명 수정</li>
  * </ul>
  *
  * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
@@ -32,11 +33,11 @@ public class Constants {
 
     // 레이블 상수
     // 연산자
-    public static final String BUTTON_ADD = "+";
-    public static final String BUTTON_SUBTRACT = "-";
-    public static final String BUTTON_MULTIPLY = "×";
-    public static final String BUTTON_DIVIDE = "÷";
-    public static final String BUTTON_EQUALS = "=";
+    public static final String ADD = "+";
+    public static final String SUBTRACT = "-";
+    public static final String MULTIPLY = "×";
+    public static final String DIVIDE = "÷";
+    public static final String EQUALS = "=";
 
     // 숫자
     public static final String ZERO = "0";
@@ -51,7 +52,7 @@ public class Constants {
     private static final String BUTTON_NINE = "9";
 
     // 기타
-    public static final String BUTTON_DOT = ".";
+    public static final String DOT = ".";
     public static final String BUTTON_REVERSE_SIGN = "±";
 
     // 기능
@@ -64,23 +65,23 @@ public class Constants {
                 Constants.BUTTON_ALL_CLEAR,
                 Constants.BUTTON_CLEAR_ENTRY,
                 Constants.BUTTON_BACKSPACE,
-                Constants.BUTTON_DIVIDE,
+                Constants.DIVIDE,
                 Constants.BUTTON_SEVEN,
                 Constants.BUTTON_EIGHT,
                 Constants.BUTTON_NINE,
-                Constants.BUTTON_MULTIPLY,
+                Constants.MULTIPLY,
                 Constants.BUTTON_FOUR,
                 Constants.BUTTON_FIVE,
                 Constants.BUTTON_SIX,
-                Constants.BUTTON_ADD,
+                Constants.ADD,
                 Constants.BUTTON_ONE,
                 Constants.BUTTON_TWO,
                 Constants.BUTTON_THREE,
-                Constants.BUTTON_SUBTRACT,
+                Constants.SUBTRACT,
                 Constants.BUTTON_REVERSE_SIGN,
                 Constants.ZERO,
-                Constants.BUTTON_DOT,
-                Constants.BUTTON_EQUALS
+                Constants.DOT,
+                Constants.EQUALS
         };
 
 
