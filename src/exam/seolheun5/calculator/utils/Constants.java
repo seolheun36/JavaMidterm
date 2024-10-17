@@ -31,6 +31,10 @@ public class Constants {
     public static final String STANDARD_TITLE = "Standard";
 
 
+    // 메시지 상수
+    public static final String NO_DIVIDE = "0으로 나눌 수 없습니다.";
+
+
     // 레이블 상수
     // 연산자
     public static final String ADD = "+";

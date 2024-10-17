@@ -1,9 +1,9 @@
 package exam.seolheun5.calculator.logic;
 
 import exam.seolheun5.calculator.utils.Constants;
-import exam.seolheun5.calculator.logic.Calculate;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * {@code ButtonEventCheck} 클라스.<br>
@@ -44,14 +44,12 @@ public class ButtonEventCheck {
      * {@code ButtonEventCheck} 클래스의 생성자.<br>
      * {@code resultLabel}, {@code solutionLabel}, {@code buttonText}를 가져와 필드 값을 설정.
      *
+     * @param resultLabel   결과 정보를 보여주는 {@code JLabel} 타입 변수
+     * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
+     * @param button        버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
      * @author seolheun5
-     *
      * @create 2024-10-16
      * @lastModified 2024-10-16
-     *
-     * @param resultLabel 결과 정보를 보여주는 {@code JLabel} 타입 변수
-     * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
-     * @param buttonText 버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
      */
     public ButtonEventCheck(JLabel resultLabel, JLabel solutionLabel, String buttonText) {
         this.resultLabel = resultLabel;
@@ -277,6 +275,8 @@ public class ButtonEventCheck {
     protected void clearAllCheck() {
         resultLabel.setText("0");
         solutionLabel.setText(" ");
+        solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
+        resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 45));
     }
 
     /**
@@ -294,5 +294,7 @@ public class ButtonEventCheck {
         } else {
             resultLabel.setText("0");
         }
+        solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
+        resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 45));
     }
 }

@@ -4,6 +4,7 @@ package exam.seolheun5.calculator.logic;
 import exam.seolheun5.calculator.utils.Constants;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * {@code Calculate} 클래스는 계산을 담당하는 메서드 종합 클래스.
@@ -133,6 +134,14 @@ public class Calculate {
     public void calculateDivide() {
         double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.DIVIDE))));
         double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.DIVIDE) + 1), solutionText.length() - 1));
+
+        if(secondNum == 0) {
+            resultLabel.setText(Constants.NO_DIVIDE);
+            solutionLabel.setText(" ");
+            solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
+            resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 25));
+            return;
+        }
 
         String result = String.valueOf(firstNum / secondNum);
         if(result.substring(result.length() - 2).equals(".0")) {
