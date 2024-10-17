@@ -9,7 +9,7 @@ import java.awt.*;
 /**
  * {@code Calculate} 클래스는 계산을 담당하는 메서드 종합 클래스.
  *
- * @author seolheun5
+ * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-16
  * @lastModified 2024-10-17
@@ -36,8 +36,6 @@ public class Calculate {
      * {@code Calculate} 클래스의 생성자.<br>
      * {@code resultLabel}, {@code solutionLabel}, {@code buttonText}를 가져와 필드 값을 설정.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-16
      * @lastModified 2024-10-16
      *
@@ -57,8 +55,6 @@ public class Calculate {
     /**
      * {@code calculateAdd} 메서드는 더하기를 수행하는 계산 메서드.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-16
      * @lastModified 2024-10-16
      */
@@ -76,8 +72,6 @@ public class Calculate {
 
     /**
      * {@code calculateSubtract} 메서드는 빼기를 수행하는 계산 메서드.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-16
      * @lastModified 2024-10-16
@@ -107,8 +101,6 @@ public class Calculate {
     /**
      * {@code calculateMultiply} 메서드는 곱하기를 수행하는 계산 메서드.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-16
      * @lastModified 2024-10-16
      */
@@ -126,8 +118,6 @@ public class Calculate {
 
     /**
      * {@code calculateDivide} 메서드는 나누기를 수행하는 계산 메서드.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-16
      * @lastModified 2024-10-16

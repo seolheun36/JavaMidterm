@@ -25,12 +25,10 @@ public class Calculator {
     /**
      * 메인 메서드.
      *
-     * @author seolheun5(김은성, piberius5@gmail.com)
-     *
      * @created 2024-10-11
      * @lastModified 2024-10-12
      *
-     * @see
+     * @param args
      */
     public static void main(String[] args) {
         new CalculatorFrame();

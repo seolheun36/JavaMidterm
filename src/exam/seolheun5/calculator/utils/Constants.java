@@ -28,43 +28,112 @@ import java.awt.*;
  */
 public class Constants {
     // 타이틀 상수
+    /**
+     * {@code STANDARD_TITLE} 상수는 계산기 종류 중 '일반' 계산기 타이틀 정보를 담고 있는 상수.
+     */
     public static final String STANDARD_TITLE = "Standard";
 
 
     // 메시지 상수
+    /**
+     * {@code NO_DIVIDE} 상수는 0으로 나누려 할 때 출력하는 오류 메시지 정보를 담고 있는 상수.
+     */
     public static final String NO_DIVIDE = "0으로 나눌 수 없습니다.";
 
 
     // 레이블 상수
     // 연산자
+    /**
+     * {@code ADD} 상수는 연산자 텍스트 "+"을 담고 있는 상수.
+     */
     public static final String ADD = "+";
+    /**
+     * {@code ADD} 상수는 연산자 텍스트 "-"을 담고 있는 상수.
+     */
     public static final String SUBTRACT = "-";
+    /**
+     * {@code ADD} 상수는 연산자 텍스트 "×"을 담고 있는 상수.
+     */
     public static final String MULTIPLY = "×";
+    /**
+     * {@code ADD} 상수는 연산자 텍스트 "÷"을 담고 있는 상수.
+     */
     public static final String DIVIDE = "÷";
+    /**
+     * {@code ADD} 상수는 연산자 텍스트 "="을 담고 있는 상수.
+     */
     public static final String EQUALS = "=";
 
     // 숫자
+    /**
+     * {@code ZERO} 상수는 숫자 텍스트 "0"을 담고 있는 상수.
+     */
     public static final String ZERO = "0";
+    /**
+     * {@code BUTTON_ONE} 상수는 숫자 텍스트 "1"을 담고 있는 상수.
+     */
     private static final String BUTTON_ONE = "1";
+    /**
+     * {@code BUTTON_TWO} 상수는 숫자 텍스트 "2"을 담고 있는 상수.
+     */
     private static final String BUTTON_TWO = "2";
+    /**
+     * {@code BUTTON_THREE} 상수는 숫자 텍스트 "3"을 담고 있는 상수.
+     */
     private static final String BUTTON_THREE = "3";
+    /**
+     * {@code BUTTON_FOUR} 상수는 숫자 텍스트 "4"을 담고 있는 상수.
+     */
     private static final String BUTTON_FOUR = "4";
+    /**
+     * {@code BUTTON_FIVE} 상수는 숫자 텍스트 "5"을 담고 있는 상수.
+     */
     private static final String BUTTON_FIVE = "5";
+    /**
+     * {@code BUTTON_SIX} 상수는 숫자 텍스트 "6"을 담고 있는 상수.
+     */
     private static final String BUTTON_SIX = "6";
+    /**
+     * {@code BUTTON_SEVEN} 상수는 숫자 텍스트 "7"을 담고 있는 상수.
+     */
     private static final String BUTTON_SEVEN = "7";
+    /**
+     * {@code BUTTON_EIGHT} 상수는 숫자 텍스트 "8"을 담고 있는 상수.
+     */
     private static final String BUTTON_EIGHT = "8";
+    /**
+     * {@code BUTTON_NINE} 상수는 숫자 텍스트 "9"을 담고 있는 상수.
+     */
     private static final String BUTTON_NINE = "9";
 
     // 기타
+    /**
+     * {@code DOT} 상수는 소수점 텍스트 "."을 담고 있는 상수.
+     */
     public static final String DOT = ".";
+    /**
+     * {@code BUTTON_REVERSE_SIGN} 상수는 부호변환 버튼 텍스트 "±"을 담고 있는 상수.
+     */
     public static final String BUTTON_REVERSE_SIGN = "±";
 
     // 기능
+    /**
+     * {@code BUTTON_CLEAR_ENTRY} 상수는 clear entry 버튼 텍스트 "CE"를 담고 있는 상수.
+     */
     public static final String BUTTON_CLEAR_ENTRY = "CE";
+    /**
+     * {@code BUTTON_ALL_CLEAR} 상수는 all clear 버튼 텍스트 "AC"를 담고 있는 상수.
+     */
     public static final String BUTTON_ALL_CLEAR = "AC";
+    /**
+     * {@code BUTTON_BACKSPACE} 상수는 지우기 버튼 텍스트 "←"을 담고 있는 상수.
+     */
     public static final String BUTTON_BACKSPACE = "←";
 
     // 레이블 리스트
+    /**
+     * {@code BUTTONS_LIST} 리스트 상수는 GridLayout에서 컴포넌트 삽입 순서로 버튼 텍스트를 묶은 리스트 상수.
+     */
     public static final String[] BUTTONS_LIST = {
                 Constants.BUTTON_ALL_CLEAR,
                 Constants.BUTTON_CLEAR_ENTRY,
@@ -90,9 +159,24 @@ public class Constants {
 
 
     // 색상 상수
+    /**
+     * {@code CALCULATOR_BACKGROUND_COLOR} 상수는 계산기의 배경 색상 정보를 담고 있는 상수.
+     */
     public static final Color CALCULATOR_BACKGROUND_COLOR = new Color(0xf3f3f3);
+    /**
+     * {@code CALCULATOR_NUMBERPAD_COLOR} 상수는 계산기 버튼 중 숫자패드 버튼의 색상 정보를 담고 있는 상수.
+     */
     public static final Color CALCULATOR_NUMBERPAD_COLOR = new Color(0xfcfcfc);
+    /**
+     * {@code CALCULATOR_FUN_AND_OPERPAD_COLOR} 상수는 계산기 버튼 중 "="을 제외한 기능과 연산자 버튼의 색상 정보를 담고 있는 상수.
+     */
     public static final Color CALCULATOR_FUN_AND_OPERPAD_COLOR = new Color(0xf6f6f6);
+    /**
+     * {@code CALCULATOR_BACKGROUND_COLOR} 상수는 계산기 버튼 중 "=" 버튼의 색상 정보를 담고 있는 상수.
+     */
     public static final Color CALCULATOR_EQUALS_COLOR = new Color(0x7b7161);
+    /**
+     * {@code CALCULATOR_BACKGROUND_COLOR} 상수는 계산기의 풀이과정 라벨의 색상 정보를 담고 있는 상수.
+     */
     public static final Color SOLUTION_LABEL_COLOR = new Color(0x939393);
 }

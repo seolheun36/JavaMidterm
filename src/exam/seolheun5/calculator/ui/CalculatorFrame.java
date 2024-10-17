@@ -28,12 +28,10 @@ public class CalculatorFrame extends JFrame {
      * {@code CalculatorFrame}의 생성자.<br>
      * 프레임의 제목과 크기, 기본 설정을 초기화.
      *
-     * @author seolheun5(김은성, priberius5 @ gmail.com)
-     *
      * @created 2024-10-11
      * @lastModified 2024-10-14
      *
-     * @see <a href="<a href="https://kr.freepik.com/search#uuid=84ebb90f-80fa-498c-a7c4-190a24030d89">UIcons 제작 아이콘</a>">아이콘 출처</a>
+     * @see <a href="https://kr.freepik.com/search#uuid=84ebb90f-80fa-498c-a7c4-190a24030d89">아이콘 출처</a>
      * @see <a href="https://selfinvestfriends.tistory.com/15">패널 중앙에 띄우기 참고</a>
      * @see <a href="https://chatgpt.com/share/670d1343-ab58-8008-92be-bdc7ae286b2c">아이콘 변경 참고</a>
      */

@@ -31,18 +31,43 @@ import java.awt.*;
  */
 public class CalculatorPanel extends JPanel {
 
+    /**
+     * {@code mainPanel} 필드는 제목, 결과, 버튼 패널의 레이아웃을 설정하는 {@code JPanel} 타입 필드.<br>
+     * GridBagLayout으로 컴포넌트 배치.
+     */
     private JPanel mainPanel;
+    /**
+     * {@code titlePanel} 필드는 제목과 관련된 컴포넌트의 레이아웃을 설정하는 {@code JPanel} 타입 필드.<br>
+     * {@code mainPanel}에서 GridBagConstraints으로 컴포넌트를 추가하기 위해 필드로 설정.<br>
+     * BorderLayout으로 컴포넌트 배치.
+     */
     private JPanel titlePanel;
+    /**
+     * {@code resultPanel} 필드는 결과값 출력과 관련된 컴포넌트의 레이아웃을 설정하는 {@code JPanel} 타입 필드.<br>
+     * {@code mainPanel}에서 GridBagConstraints으로 컴포넌트를 추가하기 위해 필드로 설정.<br>
+     * GridBagLayout으로 컴포넌트 배치.
+     */
     private JPanel resultPanel;
+    /**
+     * {@code buttonPanel} 필드는 버튼 컴포넌트의 레이아웃을 설정하는 {@code JPanel} 타입 필드.<br>
+     * {@code mainPanel}에서 GridBagConstraints으로 컴포넌트를 추가하기 위해 필드로 설정.<br>
+     * GridLayout으로 컴포넌트 배치.
+     */
     private JPanel buttonPanel;
 
+    /**
+     * {@code resultLabel} 필드는 {@code JLabel} 타입 결과값 라벨 필드.<br>
+     * 이벤트 처리에서 활용하기 위해 필드로 설정.
+     */
     private JLabel resultLabel;
+        /**
+     * {@code solutionLabel} 필드는 {@code JLabel} 타입 계산과정 라벨 필드.<br>
+     * 이벤트 처리에서 활용하기 위해 필드로 설정.
+     */
     private JLabel solutionLabel;
 
     /**
      * {@code CalculatorPanel}의 생성자.<br>
-     *
-     * @author seolheun5(김은성, priberius5@gmail.com)
      *
      * @created 2024-10-12
      * @lastModified 2024-10-14
@@ -96,8 +121,6 @@ public class CalculatorPanel extends JPanel {
     /**
      * {@code titlePanel}은 계산기의 종류를 표시해주는 패널.
      *
-     * @author seolheun5(김은성, priberius5@gmail.com)
-     *
      * @created 2024-10-12
      * @lastModified 2024-10-13
      */
@@ -114,8 +137,6 @@ public class CalculatorPanel extends JPanel {
 
     /**
      * {@code createResultPanel}은 계산 결과를 표시해주는 패널.
-     *
-     * @author seolheun5(김은성, priberius5@gmail.com)
      *
      * @created 2024-10-12
      * @lastModified 2024-10-14
@@ -149,8 +170,6 @@ public class CalculatorPanel extends JPanel {
 
     /**
      * {@code createButtonPanel}은 계산기 버튼들이 위치하는 패널.
-     *
-     * @author seolheun5(김은성, priberius5 @ gmail.com)
      *
      * @created 2024-10-12
      * @lastModified 2024-10-15

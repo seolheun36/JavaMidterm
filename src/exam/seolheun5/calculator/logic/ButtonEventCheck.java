@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * {@code ButtonEventCheck} 클라스.<br>
+ * {@code ButtonEventCheck} 클래스.<br>
  * 기존 {@code ButtonEventHandler}에 있던 버튼 이벤트 체크 메서드들을 분리 작성하기 위한 클래스.
  *
- * @author seolheun5
+ * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-16
  * @lastModified 2024-10-17
@@ -44,12 +44,12 @@ public class ButtonEventCheck {
      * {@code ButtonEventCheck} 클래스의 생성자.<br>
      * {@code resultLabel}, {@code solutionLabel}, {@code buttonText}를 가져와 필드 값을 설정.
      *
-     * @param resultLabel   결과 정보를 보여주는 {@code JLabel} 타입 변수
-     * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
-     * @param buttonText        버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
-     * @author seolheun5
      * @create 2024-10-16
      * @lastModified 2024-10-16
+     *
+     * @param resultLabel   결과 정보를 보여주는 {@code JLabel} 타입 변수
+     * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
+     * @param buttonText    버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
      */
     public ButtonEventCheck(JLabel resultLabel, JLabel solutionLabel, String buttonText) {
         this.resultLabel = resultLabel;
@@ -62,8 +62,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code numCheck} 메서드는 숫자 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
@@ -81,8 +79,6 @@ public class ButtonEventCheck {
     /**
      * {@code dotCheck} 메서드는 '.' 입력에 대한 결과값 처리 기능을 담당함.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-15
      * @lastModified 2024-10-15
      */
@@ -94,8 +90,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code reverseCheck} 메서드는 부호변환 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
@@ -117,8 +111,6 @@ public class ButtonEventCheck {
     /**
      * {@code backspaceCheck} 메서드는 '←' 입력에 대한 결과값 처리 기능을 담당함.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-15
      * @lastModified 2024-10-15
      */
@@ -136,8 +128,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code addCheck} 메서드는 '+' 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-15
      * @lastModified 2024-10-16
@@ -160,8 +150,6 @@ public class ButtonEventCheck {
     /**
      * {@code subtractCheck} 메서드는 '-' 입력에 대한 결과값 처리 기능을 담당함.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-15
      * @lastModified 2024-10-16
      */
@@ -182,8 +170,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code multiplyCheck} 메서드는 '×' 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-15
      * @lastModified 2024-10-16
@@ -206,8 +192,6 @@ public class ButtonEventCheck {
     /**
      * {@code divideCheck} 메서드는 '÷' 입력에 대한 결과값 처리 기능을 담당함.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-15
      * @lastModified 2024-10-16
      */
@@ -228,8 +212,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code equalsCheck} 메서드는 '=' 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-15
      * @lastModified 2024-10-16
@@ -267,8 +249,6 @@ public class ButtonEventCheck {
     /**
      * {@code clearAllCheck} 메서드는 'AC' 입력에 대한 결과값 처리 기능을 담당함.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-16
      * @lastModified 2024-10-16
      */
@@ -281,8 +261,6 @@ public class ButtonEventCheck {
 
     /**
      * {@code clearEntryCheck} 메서드는 'CE' 입력에 대한 결과값 처리 기능을 담당함.
-     *
-     * @author seolheun5
      *
      * @create 2024-10-16
      * @lastModified 2024-10-16

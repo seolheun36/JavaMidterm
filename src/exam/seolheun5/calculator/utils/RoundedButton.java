@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * {@code RoundedButton}은 기존 {@code JButton}을 둥글게 만들어주는 클래스.
  *
- * @author seolheun5
+ * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-14
  * @lastModified 2024-10-14

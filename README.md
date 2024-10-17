@@ -1,5 +1,7 @@
 # 계산기 (with 자바프로그래밍기초2)
 
+![계산기 이미지](./src/exam/seolheun5/calculator/resources/imgs/calculatorImg.png)
+
 이 애플리케이션은 Java와 Java Swing을 사용하여 개발된 기본 계산기입니다.  
 기본적인 사칙연산 기능을 제공합니다.
 

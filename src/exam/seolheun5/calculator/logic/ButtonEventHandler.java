@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 /**
  * {@code ButtonEventHandler}는 버튼 클릭에 대한 이벤트를 처리하는 클래스.
  *
- * @author seolheun5
+ * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-15
  * @lastModified 2024-10-16
@@ -33,8 +33,6 @@ public class ButtonEventHandler implements ActionListener {
     /**
      * {@code ButtonEventHandler}의 생성자.
      *
-     * @author seolheun5
-     *
      * @create 2024-10-15
      * @lastModified 2024-10-15
      *
@@ -47,9 +45,7 @@ public class ButtonEventHandler implements ActionListener {
     }
 
     /**
-     *
-     *
-     * @author seolheun5
+     * {@code actionPerformed}는 이벤트를 받아와 올바르게 처리하는 메서드.
      *
      * @create 2024-10-15
      * @lastModified 2024-10-15
