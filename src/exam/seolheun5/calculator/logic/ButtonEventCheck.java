@@ -46,7 +46,7 @@ public class ButtonEventCheck {
      *
      * @param resultLabel   결과 정보를 보여주는 {@code JLabel} 타입 변수
      * @param solutionLabel 풀이 과정을 보여주는 {@code JLabel} 타입 변수
-     * @param button        버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
+     * @param buttonText        버튼 텍스트 정보를 담고 있는 {@code String} 타입 변수
      * @author seolheun5
      * @create 2024-10-16
      * @lastModified 2024-10-16
