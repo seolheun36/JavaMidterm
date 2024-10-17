@@ -31,7 +31,7 @@ public class CalculatorFrame extends JFrame {
      * @created 2024-10-11
      * @lastModified 2024-10-14
      *
-     * @see <a href="https://kr.freepik.com/search#uuid=84ebb90f-80fa-498c-a7c4-190a24030d89">아이콘 출처</a>
+     * @see <a href="https://i.namu.wiki/i/7AftaBTkBYLrir8txkuzxu7eNGCkaVFXVK7eQx1V1og3mjP9ezTQrv7FTq0XaPrRFlYShB7ui0Q7wfaQd_ZP4Q.svg">아이콘 출처</a>
      * @see <a href="https://selfinvestfriends.tistory.com/15">패널 중앙에 띄우기 참고</a>
      * @see <a href="https://chatgpt.com/share/670d1343-ab58-8008-92be-bdc7ae286b2c">아이콘 변경 참고</a>
      */
@@ -41,7 +41,7 @@ public class CalculatorFrame extends JFrame {
         setSize(350, 550);
         setLocationRelativeTo(null);
 
-        Image icon = new ImageIcon(getClass().getResource("../resources/icons/icon.png")).getImage();
+        Image icon = new ImageIcon(getClass().getResource("../resources/icons/calculatorIcon.png")).getImage();
         setIconImage(icon);
 
         CalculatorPanel calculatorPanel = new CalculatorPanel();
