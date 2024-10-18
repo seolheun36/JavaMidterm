@@ -12,7 +12,7 @@ import java.awt.*;
  * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-16
- * @lastModified 2024-10-17
+ * @lastModified 2024-10-18
  *
  * @changelog
  * <ul>
@@ -21,6 +21,7 @@ import java.awt.*;
  *     <li>2024-10-16: 빼기, 곱하기, 나누기 계산 메서드 작 성</li>
  *     <li>2024-10-17: 첫 번째 숫자가 음수일 때 버그 수정</li>
  *     <li>2024-10-17: 0으로 나눌 때 오류 메시지 출력</li>
+ *     <li>2024-10-18: 0으로 나눌 때 오류 메시지 폰트 오류 수정</li>
  * </ul>
  */
 public class Calculate {
@@ -130,7 +131,7 @@ public class Calculate {
             resultLabel.setText(Constants.NO_DIVIDE);
             solutionLabel.setText(" ");
             solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
-            resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 25));
+            resultLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
             return;
         }
 

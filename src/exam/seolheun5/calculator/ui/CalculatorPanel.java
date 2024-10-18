@@ -14,7 +14,7 @@ import java.awt.*;
  * @author seolheun5(김은성, piberius5@gmail.com)
  *
  * @create 2024-10-12
- * @lastModified 2024-10-15
+ * @lastModified 2024-10-18
  *
  * @changelog
  * <ul>
@@ -27,6 +27,8 @@ import java.awt.*;
  *     <li>2024-10-14: 버튼 타입 변경</li>
  *     <li>2024-10-15: 버튼 폰트 및 폰트 사이즈 변경</li>
  *     <li>2024-10-15: 버튼 이벤트 처리 코드 작성</li>
+ *     <li>2024-10-16: changelog 통합</li>
+ *     <li>2024-10-18: 버튼 생성 부분 "="키 색상 설정 조건 상수 수정</li>
  * </ul>
  */
 public class CalculatorPanel extends JPanel {
@@ -71,17 +73,6 @@ public class CalculatorPanel extends JPanel {
      *
      * @created 2024-10-12
      * @lastModified 2024-10-14
-     *
-     * @changelog
-     * <ul>
-     *     <li>2024-10-12: 최초 생성</li>
-     *     <li>2024-10-12: 타이틀 패널 추가</li>
-     *     <li>2024-10-13: 메인 패널 추가 및 메인 패널, 타이틀 패널 배경색 설정</li>
-     *     <li>2024-10-14: 결과 패널 추가</li>
-     *     <li>2024-10-14: 버튼 패널 추가</li>
-     *     <li>2024-10-14: 메인 패널 배치관리자 변경</li>
-     *     <li>2024-10-16: changelog 통합</li>
-     * </ul>
      *
      * @see <a href="https://blog.naver.com/highkrs/220544498754">색상 설정 참고</a>
      * @see <a href="https://itdeveloper.tistory.com/20">메인 패널 레이아웃 변경 참고</a>
@@ -189,7 +180,7 @@ public class CalculatorPanel extends JPanel {
 
             if(label.matches("^[0-9±.]$")) {
                 button.setBackground(Constants.CALCULATOR_NUMBERPAD_COLOR);
-            } else if(label.equals("=")) {
+            } else if(label.equals(Constants.EQUALS)) {
                 button.setBackground(Constants.CALCULATOR_EQUALS_COLOR);
                 button.setForeground(Color.WHITE);
             } else {
