@@ -5,6 +5,7 @@ import exam.seolheun5.calculator.utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.Math;
 
 /**
  * {@code Calculate} 클래스는 계산을 담당하는 메서드 종합 클래스.
@@ -22,6 +23,7 @@ import java.awt.*;
  *     <li>2024-10-17: 첫 번째 숫자가 음수일 때 버그 수정</li>
  *     <li>2024-10-17: 0으로 나눌 때 오류 메시지 출력</li>
  *     <li>2024-10-18: 0으로 나눌 때 오류 메시지 폰트 오류 수정</li>
+ *     <li>2024-10-19: 각 사칙연산 메서드에서 중복되는 내용을 하나의 메서드로 분리하여 호출</li>
  * </ul>
  */
 public class Calculate {
@@ -29,9 +31,10 @@ public class Calculate {
     private JLabel resultLabel;
     private JLabel solutionLabel;
 
-    private String buttonText;
-    private String resultText;
     private String solutionText;
+
+    double firstNum;
+    double secondNum;
 
     /**
      * {@code Calculate} 클래스의 생성자.<br>
@@ -48,25 +51,72 @@ public class Calculate {
         this.resultLabel = resultLabel;
         this.solutionLabel = solutionLabel;
 
-        this.buttonText = buttonText;
-        this.resultText = resultLabel.getText();
         this.solutionText = solutionLabel.getText();
+    }
+
+    /**
+     * {@code findResult} 메서드는 연산자를 파라미터로 받아 결과를 문자열로 반환해주는 메서드.
+     *
+     * @create 2024-10-19
+     * @lastModified 2024-10-19
+     *
+     * @param operator 계산할 연산자를 받아옴
+     * @return 결과를 문자열로 반환
+     */
+    private String findResult(String operator) {
+        if(solutionText.startsWith(Constants.SUBTRACT)) {
+            int firstIndex = solutionText.indexOf(Constants.SUBTRACT);
+
+            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator, firstIndex + 1))));
+            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(operator, firstIndex + 1) + 1), solutionText.length() - 1));
+        } else {
+            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator))));
+            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(operator) + 1), solutionText.length() - 1));
+        }
+
+        String result = "";
+        switch (operator) {
+            case Constants.ADD:
+                result = String.valueOf(firstNum + secondNum);
+                break;
+
+            case Constants.SUBTRACT:
+                result = String.valueOf(firstNum - secondNum);
+                break;
+
+            case Constants.MULTIPLY:
+                result = String.valueOf(firstNum * secondNum);
+                break;
+
+            case Constants.DIVIDE:
+                if(secondNum == 0) {
+                    resultLabel.setText(Constants.NO_DIVIDE);
+                    solutionLabel.setText(" ");
+                    solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
+                    resultLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
+                    return result;
+                } else {
+                    result = String.valueOf(firstNum / secondNum);
+                }
+
+                break;
+        }
+
+        if(result.substring(result.length() - 2).equals(".0")) {
+            result = result.substring(0, result.length() - 2);
+        }
+
+        return result;
     }
 
     /**
      * {@code calculateAdd} 메서드는 더하기를 수행하는 계산 메서드.
      *
      * @create 2024-10-16
-     * @lastModified 2024-10-16
+     * @lastModified 2024-10-19
      */
     public void calculateAdd() {
-        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.ADD))));
-        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.ADD) + 1), solutionText.length() - 1));
-
-        String result = String.valueOf(firstNum + secondNum);
-        if(result.substring(result.length() - 2).equals(".0")) {
-            result = result.substring(0, result.length() - 2);
-        }
+        String result = findResult(Constants.ADD);
 
         resultLabel.setText(result);
     }
@@ -75,26 +125,10 @@ public class Calculate {
      * {@code calculateSubtract} 메서드는 빼기를 수행하는 계산 메서드.
      *
      * @create 2024-10-16
-     * @lastModified 2024-10-16
+     * @lastModified 2024-10-19
      */
     public void calculateSubtract() {
-        double firstNum;
-        double secondNum;
-
-        if(solutionText.startsWith(Constants.SUBTRACT)) {
-            int firstIndex = solutionText.indexOf(Constants.SUBTRACT);
-
-            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT, firstIndex + 1))));
-            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT, firstIndex + 1) + 1), solutionText.length() - 1));
-        } else {
-            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.SUBTRACT))));
-            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.SUBTRACT) + 1), solutionText.length() - 1));
-        }
-
-        String result = String.valueOf(firstNum - secondNum);
-        if(result.substring(result.length() - 2).equals(".0")) {
-            result = result.substring(0, result.length() - 2);
-        }
+        String result = findResult(Constants.SUBTRACT);
 
         resultLabel.setText(result);
     }
@@ -103,16 +137,10 @@ public class Calculate {
      * {@code calculateMultiply} 메서드는 곱하기를 수행하는 계산 메서드.
      *
      * @create 2024-10-16
-     * @lastModified 2024-10-16
+     * @lastModified 2024-10-19
      */
     public void calculateMultiply() {
-        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.MULTIPLY))));
-        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.MULTIPLY) + 1), solutionText.length() - 1));
-
-        String result = String.valueOf(firstNum * secondNum);
-        if(result.substring(result.length() - 2).equals(".0")) {
-            result = result.substring(0, result.length() - 2);
-        }
+        String result = findResult(Constants.MULTIPLY);
 
         resultLabel.setText(result);
     }
@@ -121,25 +149,13 @@ public class Calculate {
      * {@code calculateDivide} 메서드는 나누기를 수행하는 계산 메서드.
      *
      * @create 2024-10-16
-     * @lastModified 2024-10-16
+     * @lastModified 2024-10-19
      */
     public void calculateDivide() {
-        double firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(Constants.DIVIDE))));
-        double secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(Constants.DIVIDE) + 1), solutionText.length() - 1));
+        String result = findResult(Constants.DIVIDE);
 
-        if(secondNum == 0) {
-            resultLabel.setText(Constants.NO_DIVIDE);
-            solutionLabel.setText(" ");
-            solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
-            resultLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
-            return;
+        if(!result.equals("")) {
+            resultLabel.setText(result);
         }
-
-        String result = String.valueOf(firstNum / secondNum);
-        if(result.substring(result.length() - 2).equals(".0")) {
-            result = result.substring(0, result.length() - 2);
-        }
-
-        resultLabel.setText(result);
     }
 }
