@@ -6,6 +6,8 @@ import exam.seolheun5.calculator.utils.Constants;
 import javax.swing.*;
 import java.awt.*;
 import java.lang.Math;
+import java.math.BigDecimal;
+import java.math.MathContext;
 
 /**
  * {@code Calculate} 클래스는 계산을 담당하는 메서드 종합 클래스.
@@ -13,7 +15,7 @@ import java.lang.Math;
  * @author seolheun5(김은성, piberius5 @ gmail.com)
  *
  * @create 2024-10-16
- * @lastModified 2024-10-18
+ * @lastModified 2024-10-19
  *
  * @changelog
  * <ul>
@@ -24,6 +26,7 @@ import java.lang.Math;
  *     <li>2024-10-17: 0으로 나눌 때 오류 메시지 출력</li>
  *     <li>2024-10-18: 0으로 나눌 때 오류 메시지 폰트 오류 수정</li>
  *     <li>2024-10-19: 각 사칙연산 메서드에서 중복되는 내용을 하나의 메서드로 분리하여 호출</li>
+ *     <li>2024-10-19: 피연산자 타입 BigDecimal로 변경</li>
  * </ul>
  */
 public class Calculate {
@@ -32,9 +35,6 @@ public class Calculate {
     private JLabel solutionLabel;
 
     private String solutionText;
-
-    double firstNum;
-    double secondNum;
 
     /**
      * {@code Calculate} 클래스의 생성자.<br>
@@ -61,42 +61,47 @@ public class Calculate {
      * @lastModified 2024-10-19
      *
      * @param operator 계산할 연산자를 받아옴
-     * @return 결과를 문자열로 반환
+     * @return 문자열 계산 결과
+     *
+     * @see <a href="https://jsonobject.tistory.com/466">BigDecimal 타입 참고</a>
      */
     private String findResult(String operator) {
+        BigDecimal firstNum;
+        BigDecimal secondNum;
+
         if(solutionText.startsWith(Constants.SUBTRACT)) {
             int firstIndex = solutionText.indexOf(Constants.SUBTRACT);
 
-            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator, firstIndex + 1))));
-            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(operator, firstIndex + 1) + 1), solutionText.length() - 1));
+            firstNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator, firstIndex + 1)))));
+            secondNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring((solutionText.indexOf(operator, firstIndex + 1) + 1), solutionText.length() - 1)));
         } else {
-            firstNum = Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator))));
-            secondNum = Double.parseDouble(solutionText.substring((solutionText.indexOf(operator) + 1), solutionText.length() - 1));
+            firstNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator)))));
+            secondNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring((solutionText.indexOf(operator) + 1), solutionText.length() - 1)));
         }
 
         String result = "";
         switch (operator) {
             case Constants.ADD:
-                result = String.valueOf(firstNum + secondNum);
+                result = String.valueOf(firstNum.add(secondNum));
                 break;
 
             case Constants.SUBTRACT:
-                result = String.valueOf(firstNum - secondNum);
+                result = String.valueOf(firstNum.subtract(secondNum));
                 break;
 
             case Constants.MULTIPLY:
-                result = String.valueOf(firstNum * secondNum);
+                result = String.valueOf(firstNum.multiply(secondNum));
                 break;
 
             case Constants.DIVIDE:
-                if(secondNum == 0) {
+                if(secondNum.equals(BigDecimal.ZERO)) {
                     resultLabel.setText(Constants.NO_DIVIDE);
                     solutionLabel.setText(" ");
                     solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
                     resultLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
                     return result;
                 } else {
-                    result = String.valueOf(firstNum / secondNum);
+                    result = String.valueOf(firstNum.divide(secondNum, MathContext.DECIMAL128));
                 }
 
                 break;
