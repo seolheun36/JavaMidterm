@@ -2,8 +2,6 @@ package exam.seolheun5.calculator.main;
 
 import exam.seolheun5.calculator.ui.CalculatorFrame;
 
-import javax.swing.*;
-
 /**
  * 메인 클래스.<br>
  * 계산기의 UI와 logic 코드를 불러와 실행시킨다.

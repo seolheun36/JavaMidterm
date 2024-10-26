@@ -120,7 +120,7 @@ public class CalculatorPanel extends JPanel {
         titlePanel.setBackground(Constants.CALCULATOR_BACKGROUND_COLOR);
 
         JLabel titleLabel = new JLabel(Constants.STANDARD_TITLE, SwingConstants.LEFT);
-        titleLabel.setFont(new Font("SanSerif", Font.PLAIN, 20));
+        titleLabel.setFont(new Font(Constants.FONT_SANSSERIF, Font.PLAIN, 20));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 10, 15));
 
         titlePanel.add(titleLabel, BorderLayout.WEST);
@@ -140,12 +140,12 @@ public class CalculatorPanel extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
 
         solutionLabel = new JLabel(" ", SwingConstants.RIGHT);
-        solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
+        solutionLabel.setFont(new Font(Constants.FONT_SANSSERIF, Font.PLAIN, 15));
         solutionLabel.setForeground(Constants.SOLUTION_LABEL_COLOR);
         solutionLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 0, 15));
 
         resultLabel = new JLabel("0", SwingConstants.RIGHT);
-        resultLabel.setFont(new Font("SanSerif", Font.PLAIN, 45));
+        resultLabel.setFont(new Font(Constants.FONT_SANSSERIF, Font.PLAIN, 45));
         resultLabel.setBorder(BorderFactory.createEmptyBorder(0, 15, 5, 15));
 
         gbc.weightx = 1;
@@ -176,9 +176,9 @@ public class CalculatorPanel extends JPanel {
             ButtonEventHandler beh = new ButtonEventHandler(resultLabel, solutionLabel);
 
             RoundedButton button = new RoundedButton(label);
-            button.setFont(new Font("SanSerif", Font.PLAIN, 18));
+            button.setFont(new Font(Constants.FONT_SANSSERIF, Font.PLAIN, 18));
 
-            if(label.matches("^[0-9±.]$")) {
+            if(label.matches("^[\\d±.]$")) {
                 button.setBackground(Constants.CALCULATOR_NUMBERPAD_COLOR);
             } else if(label.equals(Constants.EQUALS)) {
                 button.setBackground(Constants.CALCULATOR_EQUALS_COLOR);

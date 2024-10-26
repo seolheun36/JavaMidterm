@@ -37,7 +37,7 @@ public class CalculatorFrame extends JFrame {
      */
     public CalculatorFrame() {
         setTitle("Calculator");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(350, 550);
         setLocationRelativeTo(null);
 

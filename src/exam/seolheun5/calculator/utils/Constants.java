@@ -41,6 +41,10 @@ public class Constants {
     public static final String NO_DIVIDE = "0으로 나눌 수 없습니다.";
 
 
+    // 폰트명 상수
+    public static final String FONT_SANSSERIF = "SansSerif";
+
+
     // 레이블 상수
     // 연산자
     /**
