@@ -5,7 +5,6 @@ import exam.seolheun5.calculator.utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
-import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
@@ -72,11 +71,11 @@ public class Calculate {
         if(solutionText.startsWith(Constants.SUBTRACT)) {
             int firstIndex = solutionText.indexOf(Constants.SUBTRACT);
 
-            firstNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator, firstIndex + 1)))));
-            secondNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring((solutionText.indexOf(operator, firstIndex + 1) + 1), solutionText.length() - 1)));
+            firstNum = new BigDecimal(solutionText.substring(0, (solutionText.indexOf(operator, firstIndex + 1))));
+            secondNum = new BigDecimal(solutionText.substring((solutionText.indexOf(operator, firstIndex + 1) + 1), solutionText.length() - 1));
         } else {
-            firstNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring(0, (solutionText.indexOf(operator)))));
-            secondNum = BigDecimal.valueOf(Double.parseDouble(solutionText.substring((solutionText.indexOf(operator) + 1), solutionText.length() - 1)));
+            firstNum = new BigDecimal(solutionText.substring(0, (solutionText.indexOf(operator))));
+            secondNum = new BigDecimal(solutionText.substring((solutionText.indexOf(operator) + 1), solutionText.length() - 1));
         }
 
         String result = "";
@@ -103,7 +102,6 @@ public class Calculate {
                 } else {
                     result = String.valueOf(firstNum.divide(secondNum, MathContext.DECIMAL128));
                 }
-
                 break;
         }
 
