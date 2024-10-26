@@ -30,6 +30,7 @@ import java.awt.*;
  *            <li>2024-10-16: '=' 버튼 이벤트 버그 수정</li>
  *            <li>2024-10-16: all clear, clear entry 버튼에 대한 기능 처리 메서드 작성</li>
  *            <li>2024-10-17: equalsCheck 첫 번째 숫자 음수 예외처리</li>
+ *            <li>2024-10-27: 숫자 버튼으로 계산 이어하기 기능 추가</li>
  *            </ul>
  */
 public class ButtonEventCheck {

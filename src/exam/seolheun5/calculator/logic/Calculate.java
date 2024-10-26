@@ -26,6 +26,7 @@ import java.math.MathContext;
  *            <li>2024-10-19: 각 사칙연산 메서드에서 중복되는 내용을 하나의 메서드로 분리하여 호출</li>
  *            <li>2024-10-19: 피연산자 타입 BigDecimal로 변경</li>
  *            <li>2024-10-27: 피연산자 타입 수정 후 발생한 버그 수정</li>
+ *            <li>2024-10-27: result가 한 자리 문자열일 때 발생하는 오류 수정</li>
  *            </ul>
  */
 public class Calculate {
