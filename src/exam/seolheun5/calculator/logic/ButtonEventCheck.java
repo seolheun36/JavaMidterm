@@ -15,21 +15,22 @@ import java.awt.*;
  * @lastModified 2024-10-17
  *
  * @changelog
- * <ul>
- *     <li>2024-10-15: 최초 생성</li>
- *     <li>2024-10-16: 기존 {@code ButtonEventHandler}에 존재하는 이벤트 체크 메서드 및 changelog 이전</li>
- *     <ul>
- *         <li>2024-10-15: 숫자, '.', 부호변환에 대한 기능 처리 메서드 작성</li>
- *         <li>2024-10-15: 지우기 버튼에 대한 기능 처리 메서드 작성</li>
- *         <li>2024-10-15: 연산 체크 메서드 생성</li>
- *         <li>2024-10-15: 연산 체크 메서드 작성</li>
- *     </ul>
- *     <li>2024-10-16: changelog 통합</li>
- *     <li>소수점이 마지막에 위치할 때 연산자 사용시 예외처리</li>
- *     <li>2024-10-16: '=' 버튼 이벤트 버그 수정</li>
- *     <li>2024-10-16: all clear, clear entry 버튼에 대한 기능 처리 메서드 작성</li>
- *     <li>2024-10-17: equalsCheck 첫 번째 숫자 음수 예외처리</li>
- * </ul>
+ *            <ul>
+ *            <li>2024-10-15: 최초 생성</li>
+ *            <li>2024-10-16: 기존 {@code ButtonEventHandler}에 존재하는 이벤트 체크 메서드 및
+ *            changelog 이전</li>
+ *            <ul>
+ *            <li>2024-10-15: 숫자, '.', 부호변환에 대한 기능 처리 메서드 작성</li>
+ *            <li>2024-10-15: 지우기 버튼에 대한 기능 처리 메서드 작성</li>
+ *            <li>2024-10-15: 연산 체크 메서드 생성</li>
+ *            <li>2024-10-15: 연산 체크 메서드 작성</li>
+ *            </ul>
+ *            <li>2024-10-16: changelog 통합</li>
+ *            <li>소수점이 마지막에 위치할 때 연산자 사용시 예외처리</li>
+ *            <li>2024-10-16: '=' 버튼 이벤트 버그 수정</li>
+ *            <li>2024-10-16: all clear, clear entry 버튼에 대한 기능 처리 메서드 작성</li>
+ *            <li>2024-10-17: equalsCheck 첫 번째 숫자 음수 예외처리</li>
+ *            </ul>
  */
 public class ButtonEventCheck {
 
@@ -67,12 +68,15 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void numCheck() {
-        if(!solutionText.contains(Constants.EQUALS)) {
-            if (resultText.equals(Constants.ZERO)) {
-                resultLabel.setText(buttonText);
-            } else {
-                resultLabel.setText(resultText + buttonText);
-            }
+        if (solutionText.contains(Constants.EQUALS)) {
+            clearAllCheck();
+            resultText = resultLabel.getText();
+        }
+
+        if (resultText.equals(Constants.ZERO)) {
+            resultLabel.setText(buttonText);
+        } else {
+            resultLabel.setText(resultText + buttonText);
         }
     }
 
@@ -115,10 +119,10 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-15
      */
     protected void backspaceCheck() {
-        if(!solutionText.contains(Constants.EQUALS)) {
-            if(resultText.startsWith(Constants.SUBTRACT) && resultText.length() == 2) {
+        if (!solutionText.contains(Constants.EQUALS)) {
+            if (resultText.startsWith(Constants.SUBTRACT) && resultText.length() == 2) {
                 resultLabel.setText(Constants.ZERO);
-            } else if(resultText.length() == 1) {
+            } else if (resultText.length() == 1) {
                 resultLabel.setText(Constants.ZERO);
             } else {
                 resultLabel.setText(resultText.substring(0, resultText.length() - 1));
@@ -133,11 +137,11 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void addCheck() {
-        if(!solutionText.contains(Constants.ADD) &&
-           !solutionText.contains(Constants.SUBTRACT) &&
-           !solutionText.contains(Constants.MULTIPLY) &&
-           !solutionText.contains(Constants.DIVIDE)) {
-            if(resultText.endsWith(Constants.DOT)) {
+        if (!solutionText.contains(Constants.ADD) &&
+                !solutionText.contains(Constants.SUBTRACT) &&
+                !solutionText.contains(Constants.MULTIPLY) &&
+                !solutionText.contains(Constants.DIVIDE)) {
+            if (resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
@@ -154,11 +158,11 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void subtractCheck() {
-        if(!solutionText.contains(Constants.ADD) &&
-           !solutionText.contains(Constants.SUBTRACT) &&
-           !solutionText.contains(Constants.MULTIPLY) &&
-           !solutionText.contains(Constants.DIVIDE)) {
-            if(resultText.endsWith(Constants.DOT)) {
+        if (!solutionText.contains(Constants.ADD) &&
+                !solutionText.contains(Constants.SUBTRACT) &&
+                !solutionText.contains(Constants.MULTIPLY) &&
+                !solutionText.contains(Constants.DIVIDE)) {
+            if (resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
@@ -175,11 +179,11 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void multiplyCheck() {
-        if(!solutionText.contains(Constants.ADD) &&
-           !solutionText.contains(Constants.SUBTRACT) &&
-           !solutionText.contains(Constants.MULTIPLY) &&
-           !solutionText.contains(Constants.DIVIDE)) {
-            if(resultText.endsWith(Constants.DOT)) {
+        if (!solutionText.contains(Constants.ADD) &&
+                !solutionText.contains(Constants.SUBTRACT) &&
+                !solutionText.contains(Constants.MULTIPLY) &&
+                !solutionText.contains(Constants.DIVIDE)) {
+            if (resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
@@ -196,11 +200,11 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void divideCheck() {
-        if(!solutionText.contains(Constants.ADD) &&
-           !solutionText.contains(Constants.SUBTRACT) &&
-           !solutionText.contains(Constants.MULTIPLY) &&
-           !solutionText.contains(Constants.DIVIDE)) {
-            if(resultText.endsWith(Constants.DOT)) {
+        if (!solutionText.contains(Constants.ADD) &&
+                !solutionText.contains(Constants.SUBTRACT) &&
+                !solutionText.contains(Constants.MULTIPLY) &&
+                !solutionText.contains(Constants.DIVIDE)) {
+            if (resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
@@ -217,12 +221,12 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void equalsCheck() {
-        if(!solutionText.contains(Constants.EQUALS) &&
+        if (!solutionText.contains(Constants.EQUALS) &&
                 (solutionText.contains(Constants.ADD) ||
-                 solutionText.contains(Constants.SUBTRACT) ||
-                 solutionText.contains(Constants.MULTIPLY) ||
-                 solutionText.contains(Constants.DIVIDE))) {
-            if(resultText.endsWith(Constants.DOT)) {
+                        solutionText.contains(Constants.SUBTRACT) ||
+                        solutionText.contains(Constants.MULTIPLY) ||
+                        solutionText.contains(Constants.DIVIDE))) {
+            if (resultText.endsWith(Constants.DOT)) {
                 resultText = resultText.substring(0, resultText.length() - 1);
             }
 
@@ -233,13 +237,13 @@ public class ButtonEventCheck {
 
             String checkOperatorText = solutionText.substring(1, solutionText.length() - 1);
 
-            if(checkOperatorText.contains(Constants.ADD)) {
+            if (checkOperatorText.contains(Constants.ADD)) {
                 c.calculateAdd();
-            } else if(checkOperatorText.contains(Constants.SUBTRACT)) {
+            } else if (checkOperatorText.contains(Constants.SUBTRACT)) {
                 c.calculateSubtract();
-            } else if(checkOperatorText.contains(Constants.MULTIPLY)) {
+            } else if (checkOperatorText.contains(Constants.MULTIPLY)) {
                 c.calculateMultiply();
-            } else if(checkOperatorText.contains(Constants.DIVIDE)) {
+            } else if (checkOperatorText.contains(Constants.DIVIDE)) {
                 c.calculateDivide();
             }
 
@@ -253,7 +257,7 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void clearAllCheck() {
-        resultLabel.setText("0");
+        resultLabel.setText(Constants.ZERO);
         solutionLabel.setText(" ");
         solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
         resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 45));
@@ -266,11 +270,10 @@ public class ButtonEventCheck {
      * @lastModified 2024-10-16
      */
     protected void clearEntryCheck() {
-        if(solutionText.contains(Constants.EQUALS)) {
-            resultLabel.setText("0");
-            solutionLabel.setText(" ");
+        if (solutionText.contains(Constants.EQUALS)) {
+            clearAllCheck();
         } else {
-            resultLabel.setText("0");
+            resultLabel.setText(Constants.ZERO);
         }
         solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 15));
         resultLabel.setFont(new Font("SansSarif", Font.PLAIN, 45));

@@ -94,7 +94,7 @@ public class Calculate {
                 break;
 
             case Constants.DIVIDE:
-                if(secondNum.equals(BigDecimal.ZERO)) {
+                if (secondNum.equals(BigDecimal.ZERO)) {
                     resultLabel.setText(Constants.NO_DIVIDE);
                     solutionLabel.setText(" ");
                     solutionLabel.setFont(new Font("SanSerif", Font.PLAIN, 35));
